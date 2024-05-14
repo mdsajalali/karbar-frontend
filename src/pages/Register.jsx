@@ -1,4 +1,3 @@
-import { AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import google from "../images/google.png";
 
@@ -32,9 +31,6 @@ const Register = () => {
                 placeholder="Password..."
                 required
               />
-              <span className="absolute right-2 top-3 cursor-pointer">
-                <AiFillEyeInvisible />
-              </span>
             </div>
 
             <input
