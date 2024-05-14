@@ -1,8 +1,10 @@
+import Navbar from "./pages/Navbar"
+
 const App = () => {
   return (
-    <div>
-      <h1>Hello Karbar</h1>
-    </div>
+    <>
+      <Navbar />
+    </>
   );
 };
 
