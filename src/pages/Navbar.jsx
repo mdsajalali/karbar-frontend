@@ -52,11 +52,16 @@ const Navbar = () => {
             Contact
           </Link>
         </nav>
-        <div className="hidden md:flex items-center w-10 h-10 p-1 border border-black rounded-full justify-center">
-          <FiShoppingCart size={30} />
-          <span className="-mt-10 -ml-4 bg-[#3abff8] rounded-full w-5 h-5 flex items-center justify-center text-white text-xs">
-            0
-          </span>
+        <div className="flex justify-center gap-4">
+          <div className="hidden md:flex items-center w-10 h-10 p-1 border border-black rounded-full justify-center">
+            <FiShoppingCart size={30} />
+            <span className="-mt-10 -ml-4 bg-[#3abff8] rounded-full w-5 h-5 flex items-center justify-center text-white text-xs">
+              0
+            </span>
+          </div>
+          <button className="bg-[#3abff8] hover:bg-[#58add2] text-white font-medium py-2 px-4 rounded">
+            SIGNIN
+          </button>
         </div>
 
         <div className="md:hidden">
