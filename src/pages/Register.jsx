@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <div className="flex">
       <div className="flex-1 bg-slate-100">
-        <div className="mx-auto flex min-h-screen w-[350px] flex-col justify-center sm:w-[450px] md:w-[600px]">
+        <div className="mx-auto flex min-h-screen w-[300px] flex-col justify-center sm:w-[450px] md:w-[600px]">
           <h1 className="text-3xl font-semibold">Register</h1>
           <p className="my-3 ">Welcome Back! Please enter your details.</p>
           <div>
@@ -26,7 +26,7 @@ const Register = () => {
             />
             <div className="relative">
               <input
-                className="w-full p-2"
+                className="w-full p-2 outline-none"
                 type="password"
                 name="password"
                 placeholder="Password..."
