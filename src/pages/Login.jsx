@@ -9,23 +9,23 @@ const Login = () => {
           <h1 className="text-3xl font-semibold">Login</h1>
           <p className="my-3 ">Welcome Back! Please enter your details.</p>
           <div>
-            <input
-              className="mb-5 mt-2 w-full rounded-sm border-none p-2 outline-none"
-              type="email"
-              placeholder="Enter your email..."
-              name="email"
-              required
-            />
-            <div className="relative">
+            <div className="mb-4">
               <input
-                className="w-full p-2 outline-none "
-                name="password"
-                type="password"
-                placeholder="Password..."
-                required
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
               />
-
-              <span className="absolute right-2 top-3 cursor-pointer"></span>
+            </div>
+            <div className="mb-4">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+              />
             </div>
 
             <div className="mt-4 font-semibold underline">

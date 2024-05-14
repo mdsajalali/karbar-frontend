@@ -9,27 +9,31 @@ const Register = () => {
           <h1 className="text-3xl font-semibold">Register</h1>
           <p className="my-3 ">Welcome Back! Please enter your details.</p>
           <div>
-            <input
-              className="w-full rounded-sm border-none p-2 outline-none"
-              type="text"
-              placeholder="Enter your name..."
-              name="name"
-              required
-            />
-            <input
-              className="my-5 w-full rounded-sm border-none p-2 outline-none"
-              type="email"
-              placeholder="Enter your email..."
-              name="email"
-              required
-            />
-            <div className="relative">
+            <div className="mb-4">
               <input
-                className="w-full p-2 outline-none"
+                type="name"
+                id="name"
+                name="name"
+                placeholder="Name"
+                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+              />
+            </div>
+            <div className="mb-4">
+              <input
                 type="password"
+                id="password"
                 name="password"
-                placeholder="Password..."
-                required
+                placeholder="Password"
+                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
               />
             </div>
 
