@@ -16,37 +16,37 @@ const Navbar = () => {
         <h1 className="text-2xl   lg:text-3xl font-semibold">KarBar</h1>
         <nav className="hidden md:flex items-center  lg:gap-5">
           <Link
-            className="text-lg font-medium   hover:bg-gray-100 lg:px-10 px-4 py-2 rounded-full transition-all"
+            className="text-lg font-medium   hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
             href="#"
           >
             Man
           </Link>
           <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-4 py-2 rounded-full transition-all"
+            className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
             href="#"
           >
             Women
           </Link>
           <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-4 py-2 rounded-full transition-all"
+            className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
             href="#"
           >
             Beauty
           </Link>
           <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-4 py-2 rounded-full transition-all"
+            className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
             href="#"
           >
             Kids
           </Link>
           <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-4 py-2 rounded-full transition-all"
+            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
             href="#"
           >
             Sport
           </Link>
           <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-4 py-2 rounded-full transition-all"
+            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
             href="#"
           >
             Contact
