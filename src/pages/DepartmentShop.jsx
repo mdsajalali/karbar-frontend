@@ -14,20 +14,20 @@ const shopData = [
   {
     id: 2,
     img: two,
-    title: "Sports Kit",
-    quantity: 36,
+    title: "Beauty Products",
+    quantity: 52,
   },
   {
     id: 3,
     img: three,
-    title: "Sports Kit",
-    quantity: 36,
+    title: "Pet Food",
+    quantity: 45,
   },
   {
     id: 4,
     img: four,
-    title: "Sports Kit",
-    quantity: 36,
+    title: "Travel Kit",
+    quantity: 12,
   },
 ];
 

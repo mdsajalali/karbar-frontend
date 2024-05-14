@@ -60,7 +60,7 @@ const Navbar = () => {
             </span>
           </div>
           <button className="bg-[#3abff8] hover:bg-[#58add2] text-white font-medium py-2 px-4 rounded">
-            SIGNIN
+            SIGN IN
           </button>
         </div>
 
