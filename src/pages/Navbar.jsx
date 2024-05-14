@@ -59,9 +59,9 @@ const Navbar = () => {
               0
             </span>
           </div>
-          <button className="bg-[#3abff8] hover:bg-[#58add2] text-white font-medium py-2 px-4 rounded">
+          <Link to="/login" className="bg-[#3abff8] hover:bg-[#58add2] text-white font-medium py-2 px-4 rounded">
             SIGN IN
-          </button>
+          </Link>
         </div>
 
         <div className="md:hidden">
