@@ -1,14 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
-import App from "./../App";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Women from "../pages/Women";
-import Men from "../pages/Men";
-import Kids from "../pages/Kids";
-import Sports from "../pages/Sports";
-import Beauty from "../pages/Beauty";
+import ProductsCategory from "../shared/ProductsCategory";
+import App from "./../App";
 
 const router = createBrowserRouter([
   {
@@ -21,24 +17,25 @@ const router = createBrowserRouter([
       },
       {
         path: "/men",
-        element: <Men />,
+        element: <ProductsCategory name="Men" />,
       },
       {
         path: "/women",
-        element: <Women />,
+        element: <ProductsCategory name="Women" />,
       },
       {
         path: "/kids",
-        element: <Kids />,
+        element: <ProductsCategory name="Kids" />,
       },
       {
         path: "/sports",
-        element: <Sports />,
+        element: <ProductsCategory name="Sports" />,
       },
       {
         path: "/beauty",
-        element: <Beauty />,
+        element: <ProductsCategory name="Beauty" />,
       },
+
       {
         path: "/contact",
         element: <Contact />,

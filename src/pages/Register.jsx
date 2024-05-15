@@ -15,7 +15,7 @@ const Register = () => {
                 id="name"
                 name="name"
                 placeholder="Name"
-                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full p-3 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
               />
             </div>
             <div className="mb-4">
@@ -24,7 +24,7 @@ const Register = () => {
                 id="email"
                 name="email"
                 placeholder="Email"
-                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full p-3 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
               />
             </div>
             <div className="mb-4">
@@ -33,12 +33,12 @@ const Register = () => {
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full p-3 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
               />
             </div>
 
             <input
-              className="my-4 w-full cursor-pointer rounded-sm bg-black py-2 text-white transition-all hover:space-x-2 hover:tracking-wide"
+              className="my-4 w-full cursor-pointer rounded-sm bg-black py-3 text-white transition-all hover:space-x-2 hover:tracking-wide"
               type="submit"
               value="Register"
             />
