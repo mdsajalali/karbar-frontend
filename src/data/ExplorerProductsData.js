@@ -1,15 +1,15 @@
-import five_bg from "../images/products/five-bg.png";
-import five from "../images/products/five.png";
-import four_bg from "../images/products/four-bg.png";
-import four from "../images/products/four.png";
-import one_bg from "../images/products/one-bg.png";
-import one from "../images/products/one.png";
-import six_bg from "../images/products/six-bg.png";
-import six from "../images/products/six.png";
-import three_bg from "../images/products/three-bg.png";
-import three from "../images/products/three.png";
-import two_bg from "../images/products/two-bg.png";
-import two from "../images/products/two.png";
+import five_bg from "../images/Explorer-products/five-bg.png";
+import five from "../images/Explorer-products/five.png";
+import four_bg from "../images/Explorer-products/four-bg.png";
+import four from "../images/Explorer-products/four.png";
+import one_bg from "../images/Explorer-products/one-bg.png";
+import one from "../images/Explorer-products/one.png";
+import six_bg from "../images/Explorer-products/six-bg.png";
+import six from "../images/Explorer-products/six.png";
+import three_bg from "../images/Explorer-products/three-bg.png";
+import three from "../images/Explorer-products/three.png";
+import two_bg from "../images/Explorer-products/two-bg.png";
+import two from "../images/Explorer-products/two.png";
 
 const ExplorerProductsData = [
   {

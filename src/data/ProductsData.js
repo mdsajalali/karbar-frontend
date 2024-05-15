@@ -1,0 +1,100 @@
+import five from "../images/products/five.png";
+import four from "../images/products/four.png";
+import one from "../images/products/one.png";
+import seven from "../images/products/seven.png";
+import six from "../images/products/six.png";
+import three from "../images/products/three.png";
+import two from "../images/products/two.png";
+
+const productData = [
+  {
+    id: 1,
+    tag: "New In",
+    img: one,
+    name: "Wool Cashmere jacket",
+    title: "Brown cockroach wings",
+    price: 30,
+    rating: 4.2,
+    reviews: 125,
+    category: "Man",
+    size: "M",
+    color: "Red",
+  },
+  {
+    id: 2,
+    tag: "55% Discount",
+    img: two,
+    name: "Waffle Knit Beanie",
+    title: "New blue aqua",
+    price: 45,
+    rating: 4.8,
+    reviews: 205,
+    category: "Women",
+    size: "L",
+    color: "Blue",
+  },
+  {
+    id: 3,
+    img: three,
+    name: "Travel Pet Carrier",
+    title: "Dark pink 2023",
+    price: 50,
+    rating: 4.7,
+    reviews: 125,
+    category: "Women",
+    size: "XL",
+    color: "Red",
+  },
+  {
+    id: 4,
+    tag: "Sold Out",
+    img: four,
+    name: "Black Umbrella",
+    title: "New design 2023",
+    price: 55,
+    rating: 4.6,
+    reviews: 222,
+    category: "Sports",
+    size: "M",
+    color: "Red",
+  },
+  {
+    id: 5,
+    img: five,
+    name: "Travel Pet Carrier",
+    title: "Matte black",
+    price: 60,
+    rating: 4.7,
+    reviews: 245,
+    category: "Man",
+    size: "M",
+    color: "Red",
+  },
+  {
+    id: 6,
+    img: six,
+    name: "Rounded Buckle",
+    title: "Classic green",
+    price: 88,
+    rating: 4.7,
+    reviews: 222,
+    category: "Women",
+    size: "M",
+    color: "Black",
+  },
+  {
+    id: 7,
+    tag: "Limited Edition",
+    img: seven,
+    name: "Waffle Knit Beanie",
+    title: "New design 2023",
+    price: 30,
+    rating: 4.2,
+    reviews: 125,
+    category: "Kids",
+    size: "M",
+    color: "White",
+  },
+];
+
+export default productData;
