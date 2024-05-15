@@ -18,7 +18,9 @@ const productData = [
     reviews: 125,
     category: "Man",
     size: "M",
+    sizes: "S, M, L, XL, XXL",
     color: "Red",
+    desc: "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
   },
   {
     id: 2,
@@ -31,7 +33,9 @@ const productData = [
     reviews: 205,
     category: "Women",
     size: "L",
+    sizes: "S, M, L, XL, XXL",
     color: "Blue",
+    desc: "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
   },
   {
     id: 3,
@@ -43,7 +47,9 @@ const productData = [
     reviews: 125,
     category: "Women",
     size: "XL",
+    sizes: "S, M, L, XL, XXL",
     color: "Red",
+    desc: "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
   },
   {
     id: 4,
@@ -56,7 +62,9 @@ const productData = [
     reviews: 222,
     category: "Sports",
     size: "M",
+    sizes: "S, M, L, XL, XXL",
     color: "Red",
+    desc: "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
   },
   {
     id: 5,
@@ -68,7 +76,9 @@ const productData = [
     reviews: 245,
     category: "Man",
     size: "M",
+    sizes: "S, M, L, XL, XXL",
     color: "Red",
+    desc: "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
   },
   {
     id: 6,
@@ -80,7 +90,9 @@ const productData = [
     reviews: 222,
     category: "Women",
     size: "M",
+    sizes: "S, M, L, XL, XXL",
     color: "Black",
+    desc: "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
   },
   {
     id: 7,
@@ -93,7 +105,9 @@ const productData = [
     reviews: 125,
     category: "Kids",
     size: "M",
+    sizes: "S, M, L, XL, XXL",
     color: "White",
+    desc: "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
   },
 ];
 
