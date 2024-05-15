@@ -1,11 +1,11 @@
 import ProductDetail from "../components/ProductDetail";
 import productData from "./../data/ProductsData";
 
-const Women = () => {
+const Men = () => {
   return (
     <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-10">
-        Women collection
+        Men collection
       </h1>
       <p className="my-2 text-lg md:text-xl">
         We not only help you design exceptional products, but also make it easy
@@ -146,4 +146,4 @@ const Women = () => {
   );
 };
 
-export default Women;
+export default Men;

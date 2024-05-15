@@ -13,35 +13,37 @@ const Navbar = () => {
   return (
     <header className="border-b">
       <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <h1 className="text-2xl   lg:text-3xl font-semibold">KarBar</h1>
+        <h1 className="text-2xl   lg:text-3xl font-semibold">
+          <Link to="/">KarBar</Link>
+        </h1>
         <nav className="hidden md:flex items-center  lg:gap-5">
           <Link
             className="text-lg font-medium   hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-            href="#"
+            to="/men"
           >
-            Man
+            Men
           </Link>
           <Link
             className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-             to="/women"
+            to="/women"
           >
             Women
           </Link>
           <Link
             className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-            href="#"
+            to="/beauty"
           >
             Beauty
           </Link>
           <Link
             className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-            href="#"
+           to="/kids"
           >
             Kids
           </Link>
           <Link
             className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
-            href="#"
+            to="/sports"
           >
             Sport
           </Link>
@@ -59,7 +61,10 @@ const Navbar = () => {
               0
             </span>
           </div>
-          <Link to="/login" className="bg-[#3abff8] hover:bg-[#58add2] text-white font-medium py-2 px-4 rounded">
+          <Link
+            to="/login"
+            className="bg-[#3abff8] hover:bg-[#58add2] text-white font-medium py-2 px-4 rounded"
+          >
             SIGN IN
           </Link>
         </div>
