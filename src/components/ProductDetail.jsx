@@ -1,4 +1,5 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
 
 const ProductDetail = ({ data }) => {
   return (
@@ -16,7 +17,7 @@ const ProductDetail = ({ data }) => {
           alt=""
           className="mx-auto mb-4 w-full bg-slate-200  object-cover  rounded-md transition-all duration-300 group-hover:scale-105"
         />
-        <div className="flex absolute bottom-5 left-0 right-0 items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1/2">
+        <div className="flex flex-wrap absolute bottom-20 xl:bottom-5 left-0 right-0 items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1/2">
           <button className="bg-black flex items-center gap-2 text-white  py-2 px-4 rounded-full  ">
             Add To Cart
           </button>
@@ -27,10 +28,12 @@ const ProductDetail = ({ data }) => {
       </div>
       <h2 className="text-lg font-semibold mb-2">{data.name}</h2>
       <h3 className="text-md mb-2">{data.title}</h3>
-      <div className="flex justify-center mb-4">
+      <div className="flex items-center justify-evenly mb-4">
         <span className="text-lg font-bold mr-2">${data.price}.00</span>
-        <span className="text-sm text-gray-600">
-          {data.rating} ({data.reviews} reviews)
+        <span className="text-sm flex items-center
+        
+         gap-1 justify-center text-gray-600">
+          <FaStar color="fbbf24" /> {data.rating} ({data.reviews} reviews)
         </span>
       </div>
     </div>
