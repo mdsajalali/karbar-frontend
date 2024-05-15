@@ -11,7 +11,7 @@ import three from "../images/products/three.png";
 import two_bg from "../images/products/two-bg.png";
 import two from "../images/products/two.png";
 
-const projectData = [
+const ExplorerProductsData = [
   {
     id: 1,
     img: one,
@@ -288,4 +288,4 @@ const projectData = [
   },
 ];
 
-export default projectData;
+export default ExplorerProductsData;

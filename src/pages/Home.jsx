@@ -2,6 +2,7 @@ import Banner from "./Banner";
 import Delivery from "./Delivery";
 import DepartmentShop from "./DepartmentShop";
 import Discover from "./Discover";
+import ExplorerProducts from "./ExplorerProducts";
 import NewArrivals from "./NewArrivals";
 import Offer from "./Offer";
 import Popular from "./Popular";
@@ -13,9 +14,10 @@ const Home = () => {
     <>
       <Banner />
       <Discover />
+      <Products />
       <Delivery />
       <NewArrivals />
-      <Products />
+      <ExplorerProducts />
       <Offer />
       <DepartmentShop />
       <Popular />

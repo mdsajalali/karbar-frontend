@@ -1,56 +1,73 @@
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
-import ProjectTab from "../components/ProjectTab.jsx";
-import projectData from "../data/projectData.js";
-
 const Products = () => {
-  const women = projectData.filter((item) => item.category === "women");
-  const man = projectData.filter((item) => item.category === "man");
-  const kids = projectData.filter((item) => item.category === "kids");
-  const sports = projectData.filter((item) => item.category === "sports");
-  const beauty = projectData.filter((item) => item.category === "beauty");
-
   return (
-    <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-center font-semibold my-10 xl:text-5xl md:text-3xl text-2xl">
-        Start exploring.
+    <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8 my-10">
+      <h1 className="text-3xl md:text-4xl font-bold mb-4">
+        What's trending now
       </h1>
+      <p className="my-2 text-lg md:text-xl">
+        Discover the most trending products in Karbar.
+      </p>
 
-      <div>
-        <Tabs>
-          <TabList className="flex justify-center">
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
-              Women
-            </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
-              Man
-            </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
-              Kids
-            </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
-              Sports
-            </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
-              Beauty
-            </Tab>
-          </TabList>
-          <TabPanel>
-            <ProjectTab projects={women} />
-          </TabPanel>
-          <TabPanel>
-            <ProjectTab projects={man} />
-          </TabPanel>
-          <TabPanel>
-            <ProjectTab projects={kids} />
-          </TabPanel>
-          <TabPanel>
-            <ProjectTab projects={sports} />
-          </TabPanel>
-          <TabPanel>
-            <ProjectTab projects={beauty} />
-          </TabPanel>
-        </Tabs>
+      <hr className="my-8 border-gray-300" />
+
+      <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col">
+          <label htmlFor="price" className="text-sm font-semibold">
+            Price
+          </label>
+          <input
+            type="number"
+            id="price"
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#3abff8]"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="category" className="text-sm font-semibold">
+            Category
+          </label>
+          <select
+            id="category"
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#3abff8]"
+          >
+            <option value="">All</option>
+            <option value="women">Women</option>
+            <option value="man">Man</option>
+            <option value="kids">Kids</option>
+            <option value="sports">Sports</option>
+            <option value="beauty">Beauty</option>
+          </select>
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="size" className="text-sm font-semibold">
+            Size
+          </label>
+          <select
+            id="size"
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#3abff8]"
+          >
+            <option value="">All</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+          </select>
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="color" className="text-sm font-semibold">
+            Color
+          </label>
+          <select
+            id="color"
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#3abff8]"
+          >
+            <option value="">All</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="pink">Pink</option>
+            <option value="brown">Brown</option>
+          </select>
+        </div>
       </div>
     </div>
   );

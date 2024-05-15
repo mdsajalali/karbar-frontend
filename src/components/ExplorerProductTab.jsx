@@ -1,6 +1,6 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const ProjectTab = ({ projects }) => {
+const ExplorerProductTab = ({ projects }) => {
   return (
     <>
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -37,4 +37,4 @@ const ProjectTab = ({ projects }) => {
   );
 };
 
-export default ProjectTab;
+export default ExplorerProductTab;
