@@ -1,5 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
+import AddProduct from "../dashboard/AddProduct";
 import Dashboard from "../dashboard/Dashboard";
+import ListProduct from "../dashboard/ListProduct";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -54,6 +56,20 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+    children: [
+       {
+          path: "",
+          element: <Navigate to="addproduct" />
+       },
+       {
+        path: "addproduct",
+        element: <AddProduct />
+       },
+       {
+        path: "listproduct",
+        element: <ListProduct />
+       }
+    ],
   },
 ]);
 
