@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <div className="">
       <Header />
-      <div className="flex gap-10">
+      <div className="flex flex-col lg:flex-row col-span-12">
         <Sidebar />
         <Outlet />
       </div>
