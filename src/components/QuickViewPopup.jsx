@@ -1,4 +1,3 @@
-import React from "react";
 import { FaStar } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 
@@ -45,6 +44,7 @@ const QuickViewPopup = ({ data, togglePopup }) => {
           </div>
           <div>
             <h1 className="text-lg font-semibold">Description</h1>
+            <hr className="my-2" />
             <p className="text-sm">{data.desc}</p>
           </div>
         </div>
