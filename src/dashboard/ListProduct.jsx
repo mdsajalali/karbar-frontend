@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa";
+import cross_icon from "../images/cross_icon.png";
 import productData from "./../data/ProductsData";
 
 const ListProduct = () => {
@@ -7,7 +8,7 @@ const ListProduct = () => {
       <h1 className="text-2xl font-bold mb-4">All Product List</h1>
       <table className="w-full">
         <thead>
-          <tr className="font-semibold  ">
+          <tr className="font-semibold">
             <th className="text-center">Id</th>
             <th className="text-center">Image</th>
             <th className="text-center">Name</th>
@@ -15,6 +16,7 @@ const ListProduct = () => {
             <th className="text-center">Price</th>
             <th className="text-center">Rating/Reviews</th>
             <th className="text-center">Category</th>
+            <th className="text-center">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -25,11 +27,12 @@ const ListProduct = () => {
               <td className="p-4 text-center">{data.name}</td>
               <td className=" p-4 text-center">{data.title}</td>
               <td className="p-4 text-center">${data.price}.00</td>
-              <td className="p-4 flex items-center gap-1 justify-center text-center">
+              <td className="p-4  text-center">
                 <FaStar color="fbbf24" /> {data.rating} ({data.reviews} reviews)
               </td>
+              <td className="p-4 text-center">{data.category}</td>
               <td className="p-4 text-center">
-                {data.category}
+                <img className="cursor-pointer" src={cross_icon} alt="" />
               </td>
             </tr>
           ))}
