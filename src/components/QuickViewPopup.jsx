@@ -13,7 +13,7 @@ const QuickViewPopup = ({ data, togglePopup }) => {
         </button>
 
         <div className="w-[200px] border mx-auto my-10">
-          <img src={data.img} alt="" />
+          <img src={data.image} alt="" />
         </div>
 
         <div>

@@ -20,7 +20,7 @@ const ProductDetail = ({ data }) => {
           ""
         )}
         <img
-          src={data.img}
+          src={data.image}
           alt=""
           className="mx-auto mb-4 w-full bg-slate-200  object-cover  rounded-md transition-all duration-300 group-hover:scale-105"
         />
