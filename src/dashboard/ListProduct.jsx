@@ -1,5 +1,5 @@
-import  { useState, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import cross_icon from "../images/cross_icon.png";
 
@@ -7,7 +7,6 @@ const ListProduct = () => {
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
-    // Fetch product data from backend when component mounts
     const fetchProductData = async () => {
       try {
         const response = await axios.get("http://localhost:5000/getproduct");
@@ -18,7 +17,19 @@ const ListProduct = () => {
     };
 
     fetchProductData();
-  }, []); // Empty dependency array to ensure this effect runs only once
+  }, []);
+
+  const productDelete = async (productId) => {
+    try {
+      await axios.delete(`http://localhost:5000/deleteproduct/${productId}`);
+
+      setProductData(
+        productData.filter((product) => product._id !== productId)
+      );
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
 
   return (
     <div className="list-product p-4 lg:p-8 w-full mx-auto mt-4 bg-white rounded-lg shadow-md overflow-x-auto">
@@ -51,7 +62,12 @@ const ListProduct = () => {
               </td>
               <td className="p-4 text-center">{data.category}</td>
               <td className="p-4 text-center">
-                <img className="cursor-pointer" src={cross_icon} alt="" />
+                <img
+                  className="cursor-pointer"
+                  onClick={() => productDelete(data._id)}
+                  src={cross_icon}
+                  alt=""
+                />
               </td>
             </tr>
           ))}
