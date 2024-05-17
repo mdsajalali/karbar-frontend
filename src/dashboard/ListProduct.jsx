@@ -1,8 +1,25 @@
+import  { useState, useEffect } from "react";
+import axios from "axios";
 import { FaStar } from "react-icons/fa";
 import cross_icon from "../images/cross_icon.png";
-import productData from "./../data/ProductsData";
 
 const ListProduct = () => {
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    // Fetch product data from backend when component mounts
+    const fetchProductData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/getproduct");
+        setProductData(response.data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    fetchProductData();
+  }, []); // Empty dependency array to ensure this effect runs only once
+
   return (
     <div className="list-product p-4 lg:p-8 w-full mx-auto mt-4 bg-white rounded-lg shadow-md overflow-x-auto">
       <h1 className="text-2xl font-bold mb-4">All Product List</h1>
@@ -23,7 +40,9 @@ const ListProduct = () => {
           {productData.map((data, idx) => (
             <tr key={idx} className="border border-gray-300">
               <td className="  p-4 text-center">{idx + 1}</td>
-              <img className="w-20 h-20" src={data.img} alt="" />
+              <td className="p-4 text-center">
+                <img className="w-20 h-20" src={data.image} alt="" />
+              </td>
               <td className="p-4 text-center">{data.name}</td>
               <td className=" p-4 text-center">{data.title}</td>
               <td className="p-4 text-center">${data.price}.00</td>
