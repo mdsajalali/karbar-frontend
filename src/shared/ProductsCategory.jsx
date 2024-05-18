@@ -3,7 +3,6 @@ import useProductData from './GetProduct';
 
 const ProductsCategory = ({ name }) => {
   const productData = useProductData();
-  console.log(productData)
   return (
     <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-10">

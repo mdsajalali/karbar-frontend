@@ -1,5 +1,6 @@
-import   { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const AddProduct = () => {
   const [productDetails, setProductDetails] = useState({
@@ -9,10 +10,10 @@ const AddProduct = () => {
     price: "",
     rating: "",
     reviews: "",
-    category: "women",
+    category: "",
     sizes: "",
     color: "",
-    description: "",
+    desc: "",
   });
 
   const handleChange = (e) => {
@@ -23,11 +24,21 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/addproduct",
-        productDetails
-      );
-      console.log("Product added successfully:", response.data);
+      await axios.post("http://localhost:5000/addproduct", productDetails);
+      toast.success("Product added successfully!");
+      setProductDetails({
+        name: "",
+        title: "",
+        image: "",
+        price: "",
+        rating: "",
+        reviews: "",
+        category: "",
+        sizes: "",
+        color: "",
+        desc: "",
+      });
+      e.target.reset();
     } catch (error) {
       console.error("Error adding product:", error);
     }
@@ -47,6 +58,7 @@ const AddProduct = () => {
               onChange={handleChange}
               type="text"
               name="name"
+              required
               placeholder="Product Name"
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             />
@@ -58,6 +70,7 @@ const AddProduct = () => {
               onChange={handleChange}
               type="text"
               name="title"
+              required
               placeholder="Product Title"
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             />
@@ -69,6 +82,7 @@ const AddProduct = () => {
               onChange={handleChange}
               type="text"
               name="image"
+              required
               placeholder="Image URL"
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             />
@@ -80,6 +94,7 @@ const AddProduct = () => {
               onChange={handleChange}
               type="number"
               name="price"
+              required
               placeholder="Product Price"
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             />
@@ -91,6 +106,7 @@ const AddProduct = () => {
               onChange={handleChange}
               type="number"
               name="rating"
+              required
               placeholder="Product Rating"
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             />
@@ -102,6 +118,7 @@ const AddProduct = () => {
               onChange={handleChange}
               type="number"
               name="reviews"
+              required
               placeholder="Product Reviews"
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             />
@@ -114,9 +131,12 @@ const AddProduct = () => {
               name="category"
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             >
+              <option value="">Select Category</option>
               <option value="women">Women</option>
               <option value="men">Men</option>
-              <option value="kid">Kid</option>
+              <option value="kids">Kids</option>
+              <option value="sports">Sports</option>
+              <option value="beauty">Beauty</option>
             </select>
           </div>
           <div className="mb-4">
@@ -125,8 +145,10 @@ const AddProduct = () => {
               value={productDetails.sizes}
               onChange={handleChange}
               name="sizes"
+              required
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             >
+              <option value="">Select Size</option>
               <option value="S">S</option>
               <option value="M">M</option>
               <option value="L">L</option>
@@ -134,22 +156,32 @@ const AddProduct = () => {
             </select>
           </div>
           <div className="mb-4">
-            <p>Color</p>
-            <input
+            <label htmlFor="color" className="block mb-2">
+              Color
+            </label>
+            <select
               value={productDetails.color}
               onChange={handleChange}
-              type="text"
               name="color"
-              placeholder="Product Color"
+              id="color"
+              required
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
-            />
+            >
+              <option value="">Select Color</option>
+              <option value="Red">Red</option>
+              <option value="Blue">Blue</option>
+              <option value="Green">Green</option>
+              <option value="Pink">Pink</option>
+              <option value="Brown">Brown</option>
+            </select>
           </div>
           <div className="mb-4 w-full">
             <p>Description</p>
             <textarea
-              value={productDetails.description}
+              value={productDetails.desc}
               onChange={handleChange}
-              name="description"
+              name="desc"
+              required
               placeholder="Product Description"
               className="w-full h-32 border border-gray-300 rounded px-4 py-2 mt-2"
             />

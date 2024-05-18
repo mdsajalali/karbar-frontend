@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const AddBlog = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     image: "",
     title: "",
     desc: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,8 +23,8 @@ const AddBlog = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:5000/addblog", formData);
-      console.log("Blog added successfully!");
-      // You can add further logic here, like redirecting to another page or showing a success message
+      toast.success("Blog added successfully!");
+      setFormData(initialFormData);
     } catch (error) {
       console.error("Error adding blog:", error);
     }

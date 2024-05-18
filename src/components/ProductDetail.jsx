@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import QuickViewPopup from "./QuickViewPopup";
-import { Link } from 'react-router-dom';
 
 const ProductDetail = ({ data }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -22,6 +22,7 @@ const ProductDetail = ({ data }) => {
         )}
         <Link to="/men">
           <img
+            onClick={window.scrollTo(0, 0)}
             src={data.image}
             alt=""
             className="mx-auto mb-4 w-full bg-slate-200  object-cover  rounded-md transition-all duration-300 group-hover:scale-105"
