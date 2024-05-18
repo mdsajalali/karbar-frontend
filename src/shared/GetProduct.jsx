@@ -7,7 +7,9 @@ const useProductData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/getproduct");
+        const response = await axios.get(
+          "https://karbar-api.vercel.app/getproduct"
+        );
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching product data:", error);

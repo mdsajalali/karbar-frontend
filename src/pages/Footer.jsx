@@ -34,35 +34,19 @@ const Footer = () => {
               Quick Link
             </h2>
             <ul>
-              <li className="text-gray-300 my-2 cursor-pointer hover:translate-x-1 transition-all">
-                Men
-              </li>
-              <li className="text-gray-300 cursor-pointer hover:translate-x-1 transition-all">
-                Woman
-              </li>
-              <li className="text-gray-300 mb-2 cursor-pointer hover:translate-x-1 transition-all mt-1">
-                Kids
-              </li>
-              <li className="text-gray-300 cursor-pointer hover:translate-x-1 transition-all">
-                Beauty
-              </li>
+              <li className="text-gray-300 cursor-pointer">Woman</li>
+              <li className="text-gray-300 my-2 cursor-pointer">Men</li>
+              <li className="text-gray-300 mb-2 cursor-pointer">Kids</li>
+              <li className="text-gray-300 cursor-pointer">Beauty</li>
             </ul>
           </div>
           <div className="mb-8">
             <h2 className="text-white text-lg font-semibold mb-4">Resources</h2>
             <ul>
-              <li className="text-gray-300 cursor-pointer hover:translate-x-1 transition-all ">
-                Support
-              </li>
-              <li className="text-gray-300 cursor-pointer  hover:translate-x-1 transition-all my-2">
-                Contact
-              </li>
-              <li className="text-gray-300 cursor-pointer hover:translate-x-1 transition-all  mb-2">
-                About
-              </li>
-              <li className="text-gray-300 cursor-pointer hover:translate-x-1 transition-all ">
-                FAQ
-              </li>
+              <li className="text-gray-300 cursor-pointer">Support</li>
+              <li className="text-gray-300 cursor-pointer my-2">Contact</li>
+              <li className="text-gray-300 cursor-pointer mb-2">About</li>
+              <li className="text-gray-300 cursor-pointer">FAQ</li>
             </ul>
           </div>
           <div className="mb-8">

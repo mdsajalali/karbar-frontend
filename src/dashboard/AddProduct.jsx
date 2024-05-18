@@ -24,7 +24,10 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/addproduct", productDetails);
+      await axios.post(
+        "https://karbar-api.vercel.app/addproduct",
+        productDetails
+      );
       toast.success("Product added successfully!");
       setProductDetails({
         name: "",

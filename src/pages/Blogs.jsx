@@ -9,7 +9,9 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/getblog");
+        const response = await axios.get(
+          "https://karbar-api.vercel.app/getblog"
+        );
         setBlogData(response.data);
       } catch (error) {
         console.error("Error fetching blog data:", error);

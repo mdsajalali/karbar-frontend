@@ -9,7 +9,7 @@ const ListProduct = () => {
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/getproduct");
+        const response = await axios.get("https://karbar-api.vercel.app/getproduct");
         setProductData(response.data);
       } catch (error) {
         console.error("Error fetching product data:", error);
@@ -21,7 +21,7 @@ const ListProduct = () => {
 
   const productDelete = async (productId) => {
     try {
-      await axios.delete(`http://localhost:5000/deleteproduct/${productId}`);
+      await axios.delete(`https://karbar-api.vercel.app/deleteproduct/${productId}`);
 
       setProductData(
         productData.filter((product) => product._id !== productId)
