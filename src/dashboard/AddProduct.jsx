@@ -34,7 +34,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="p-4 md:p-8 max-w-4xl mx-auto mt-4 bg-white rounded-lg shadow-md">
+    <div className="p-4 md:p-8 max-w-4xl mx-auto mt-4 bg-white rounded-lg  ">
       <h1 className="xl:text-3xl text-2xl md:text-4xl font-bold text-center mb-6">
         Add Product
       </h1>
@@ -144,7 +144,7 @@ const AddProduct = () => {
               className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
             />
           </div>
-          <div className="mb-4 w-full border">
+          <div className="mb-4 w-full">
             <p>Description</p>
             <textarea
               value={productDetails.description}

@@ -32,7 +32,7 @@ const ListProduct = () => {
   };
 
   return (
-    <div className="list-product p-4 lg:p-8 w-full mx-auto mt-4 bg-white rounded-lg shadow-md overflow-x-auto">
+    <div className="p-4 lg:p-8 w-full mx-auto mt-4 bg-white rounded-lg shadow-md overflow-x-auto">
       <h1 className="text-2xl font-bold mb-4">All Product List</h1>
       <table className="w-full">
         <thead>
