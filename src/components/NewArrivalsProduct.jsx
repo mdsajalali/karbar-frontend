@@ -2,7 +2,7 @@ import { FaStar } from "react-icons/fa";
 
 const NewArrivalsProduct = ({ data }) => {
   return (
-    <div className="max-w-xs rounded overflow-hidden my-10">
+    <div className="max-w-xs mx-auto rounded overflow-hidden my-5">
       <img
         className="w-full bg-slate-200  object-cover mb-4 rounded-md"
         src={data.img}

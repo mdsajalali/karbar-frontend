@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const QuickViewPopup = ({ data, togglePopup }) => {
   console.log(data);
@@ -14,7 +15,9 @@ const QuickViewPopup = ({ data, togglePopup }) => {
         </button>
 
         <div className="w-[200px] border mx-auto my-10">
-          <img src={data.image} alt="" />
+          <Link to="/men">
+            <img src={data.image} alt="" />
+          </Link>
         </div>
 
         <div>

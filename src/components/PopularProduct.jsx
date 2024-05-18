@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 
 const PopularProduct = ({ data }) => {
   return (
-    <div className=" my-20 rounded overflow-hidden shadow-lg">
+    <div className=" my-5 rounded overflow-hidden shadow-lg">
       <div>
         <img
           className="w-full bg-slate-200  object-cover mb-4 rounded-md"

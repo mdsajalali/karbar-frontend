@@ -18,7 +18,7 @@ const ExplorerProducts = () => {
 
       <div>
         <Tabs>
-          <TabList className="flex justify-center">
+          <TabList className="flex flex-wrap gap-2 justify-center">
             <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
               Women
             </Tab>

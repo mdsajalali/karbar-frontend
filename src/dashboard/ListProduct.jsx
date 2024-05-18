@@ -52,7 +52,7 @@ const ListProduct = () => {
             <tr key={idx} className="border border-gray-300">
               <td className="  p-4 text-center">{idx + 1}</td>
               <td className="p-4 text-center">
-                <img className="w-20 h-20" src={data.image} alt="" />
+                <img className="w-20 h-20 object-cover" src={data.image} alt="" />
               </td>
               <td className="p-4 text-center">{data.name}</td>
               <td className=" p-4 text-center">{data.title}</td>
