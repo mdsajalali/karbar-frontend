@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { RiMenu3Fill } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,49 +16,28 @@ const Navbar = () => {
         <h1 className="text-2xl   lg:text-3xl font-semibold">
           <Link to="/">KarBar</Link>
         </h1>
-        <nav className="hidden md:flex items-center  lg:gap-5">
-          <Link
-            className="text-lg font-medium   hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-            to="/men"
-          >
+        <nav className="hidden lg:flex items-center  lg:gap-10  gap-5">
+          <NavLink className="text-lg font-medium   " to="/men">
             Men
-          </Link>
-          <Link
-            className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-            to="/women"
-          >
+          </NavLink>
+          <NavLink className="text-lg font-medium  " to="/women">
             Women
-          </Link>
-          <Link
-            className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-            to="/beauty"
-          >
-            Beauty
-          </Link>
-          <Link
-            className="text-lg font-medium  hover:bg-gray-100 xl:px-10 px-3 py-2 rounded-full transition-all"
-           to="/kids"
-          >
+          </NavLink>
+          <NavLink className="text-lg font-medium  " to="/kids">
             Kids
-          </Link>
-          <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
-            to="/sports"
-          >
-            Sport
-          </Link>
-          <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
-            to="/blogs"
-          >
+          </NavLink>
+          <NavLink className="text-lg font-medium  " to="/beauty">
+            Beauty
+          </NavLink>
+          <NavLink className="text-lg font-medium" to="/sports">
+            Sports
+          </NavLink>
+          <NavLink className="text-lg font-medium" to="/blogs">
             Blogs
-          </Link>
-          <Link
-            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
-            to="/contact"
-          >
+          </NavLink>
+          <NavLink className="text-lg font-medium   " to="/contact">
             Contact
-          </Link>
+          </NavLink>
         </nav>
         <div className="flex justify-center gap-4">
           <div className="hidden md:flex items-center w-10 h-10 p-1 border border-black rounded-full justify-center">
@@ -75,48 +54,62 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={toggleNavbar} type="button">
             <RiMenu3Fill size={20} />
           </button>
         </div>
       </div>
       {/* Responsive Navbar */}
-      <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
+      <div className={`lg:hidden ${isOpen ? "block" : "hidden"}`}>
         <nav className="px-2 pt-2 pb-3 space-y-1">
           <Link
+            onClick={toggleNavbar}
             className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
-            href="#"
+            to="/men"
           >
-            Man
+            Men
           </Link>
           <Link
+            onClick={toggleNavbar}
             className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
-            href="#"
+            to="/women"
           >
             Women
           </Link>
+
           <Link
+            onClick={toggleNavbar}
             className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
-            href="#"
-          >
-            Beauty
-          </Link>
-          <Link
-            className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
-            href="#"
+            to="/kids"
           >
             Kids
           </Link>
           <Link
+            onClick={toggleNavbar}
             className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
-            href="#"
+            to="/beauty"
           >
-            Sport
+            Beauty
           </Link>
           <Link
+            onClick={toggleNavbar}
             className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
-            href="#"
+            to="/sports"
+          >
+            Sports
+          </Link>
+          <Link
+            onClick={toggleNavbar}
+            className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
+            to="/blogs"
+          >
+            Blogs
+          </Link>
+          <Link
+            onClick={toggleNavbar}
+            className="block px-3 py-2 rounded-md text-lg font-medium  hover:bg-gray-100"
+            to="/contact"
           >
             Contact
           </Link>
