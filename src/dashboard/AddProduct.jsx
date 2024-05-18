@@ -35,6 +35,9 @@ const AddProduct = () => {
 
   return (
     <div className="p-4 md:p-8 max-w-4xl mx-auto mt-4 bg-white rounded-lg shadow-md">
+      <h1 className="xl:text-3xl text-2xl md:text-4xl font-bold text-center mb-6">
+        Add Product
+      </h1>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="mb-4">
@@ -157,7 +160,7 @@ const AddProduct = () => {
           type="submit"
           className="w-full h-12 bg-[#3abff8] text-white font-semibold rounded-lg hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
         >
-          ADD
+          Add Product
         </button>
       </form>
     </div>

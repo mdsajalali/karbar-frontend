@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 const Blogs = () => {
   const [blogData, setBlogData] = useState([]);
   const [expandedDesc, setExpandedDesc] = useState({});
+  console.log(blogData)
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -41,21 +42,23 @@ const Blogs = () => {
             />
             <div className="p-6">
               <h2 className="mb-2 text-xl">{blog.title}</h2>
-              <p className="text-sm text-gray-700">
-                {expandedDesc[blog.id]
-                  ? blog.desc
-                  : blog.desc.length > 200
-                  ? blog.desc.slice(0, 200) + "..."
-                  : blog.desc}
-                {blog.desc.length > 200 && (
-                  <span
-                    className="text-[#3abff8] cursor-pointer ml-1"
-                    onClick={() => toggleExpand(blog.id)}
-                  >
-                    {expandedDesc[blog.id] ? "Read Less" : "Read More"}
-                  </span>
-                )}
-              </p>
+              {blog.desc && (
+                <p className="text-sm text-gray-700">
+                  {expandedDesc[blog.id]
+                    ? blog.desc
+                    : blog.desc.length > 200
+                    ? blog.desc.slice(0, 200) + "..."
+                    : blog.desc}
+                  {blog.desc.length > 200 && (
+                    <span
+                      className="text-[#3abff8] cursor-pointer ml-1"
+                      onClick={() => toggleExpand(blog.id)}
+                    >
+                      {expandedDesc[blog.id] ? "Read Less" : "Read More"}
+                    </span>
+                  )}
+                </p>
+              )}
             </div>
           </div>
         ))}
