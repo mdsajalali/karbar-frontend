@@ -9,6 +9,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProductsCategory from "../shared/ProductsCategory";
 import App from "./../App";
+import AddBlog from "../dashboard/AddBlog";
+import ListBlog from "../dashboard/ListBlog";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +75,14 @@ const router = createBrowserRouter([
       {
         path: "listproduct",
         element: <ListProduct />,
+      },
+      {
+        path: "addblog",
+        element: <AddBlog />,
+      },
+      {
+        path: "listblog",
+        element: <ListBlog />,
       },
     ],
   },

@@ -17,6 +17,18 @@ const Sidebar = () => {
           <p>Product List</p>
         </div>
       </Link>
+      <Link to="addblog" className="no-underline">
+        <div className=" flex mt-5   mx-10 py-2 px-5 rounded bg-gray-200">
+          <img src={add_product_icon} alt="" className="w-6 h-6 mr-5" />
+          <p>Add Blog</p>
+        </div>
+      </Link>
+      <Link to="listblog" className="no-underline">
+        <div className=" flex mt-5   mx-10 py-2 px-5 rounded bg-gray-200">
+          <img src={list_product_icon} alt="" className="w-6 h-6 mr-5" />
+          <p>Blog List</p>
+        </div>
+      </Link>
     </div>
   );
 };
