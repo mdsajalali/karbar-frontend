@@ -24,6 +24,7 @@ const Contact = () => {
                 type="text"
                 id="fullname"
                 name="fullname"
+                placeholder="Name"
                 className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
               />
             </div>
@@ -38,6 +39,7 @@ const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
+                placeholder="Email"
                 className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
               />
             </div>
@@ -50,7 +52,7 @@ const Contact = () => {
               </label>
               <textarea
                 className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
-                placeholder="Type your message here..."
+                placeholder="Message"
                 rows={4}
               />
             </div>

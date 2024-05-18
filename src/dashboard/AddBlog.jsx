@@ -46,6 +46,7 @@ const AddBlog = () => {
             id="image"
             name="image"
             value={formData.image}
+            placeholder="Image URL"
             onChange={handleChange}
             className="border rounded-md px-4 py-2 w-full"
           />
@@ -61,6 +62,7 @@ const AddBlog = () => {
             required
             value={formData.title}
             onChange={handleChange}
+            placeholder="Title"
             className="border rounded-md px-4 py-2 w-full"
           />
         </div>
@@ -74,6 +76,7 @@ const AddBlog = () => {
             required
             value={formData.desc}
             onChange={handleChange}
+            placeholder="Blog Description"
             className="border rounded-md px-4 py-2 w-full h-32 resize-none"
           ></textarea>
         </div>
