@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const Blogs = () => {
   const [blogData, setBlogData] = useState([]);
   const [expandedDesc, setExpandedDesc] = useState({});
-  console.log(blogData)
+  console.log(blogData);
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -36,7 +36,7 @@ const Blogs = () => {
         {blogData.map((blog) => (
           <div className="rounded-md bg-gray-100" key={blog.id}>
             <img
-              className="w-full rounded-t-md"
+              className="w-full lg:h-[400px] object-cover rounded-t-md"
               src={blog.image}
               alt={blog.title}
             />

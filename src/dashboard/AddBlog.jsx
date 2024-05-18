@@ -39,6 +39,7 @@ const AddBlog = () => {
           </label>
           <input
             type="text"
+            required
             id="image"
             name="image"
             value={formData.image}
@@ -54,6 +55,7 @@ const AddBlog = () => {
             type="text"
             id="title"
             name="title"
+            required
             value={formData.title}
             onChange={handleChange}
             className="border rounded-md px-4 py-2 w-full"
@@ -66,6 +68,7 @@ const AddBlog = () => {
           <textarea
             id="desc"
             name="desc"
+            required
             value={formData.desc}
             onChange={handleChange}
             className="border rounded-md px-4 py-2 w-full h-32 resize-none"

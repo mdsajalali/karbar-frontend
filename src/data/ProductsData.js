@@ -10,7 +10,7 @@ const productData = [
   {
     id: 1,
     tag: "New In",
-    img: one,
+    image: one,
     name: "Wool Cashmere jacket",
     title: "Brown cockroach wings",
     price: 30,
@@ -25,7 +25,7 @@ const productData = [
   {
     id: 2,
     tag: "55% Discount",
-    img: two,
+    image: two,
     name: "Waffle Knit Beanie",
     title: "New blue aqua",
     price: 45,
@@ -39,7 +39,7 @@ const productData = [
   },
   {
     id: 3,
-    img: three,
+    image: three,
     name: "Travel Pet Carrier",
     title: "Dark pink 2023",
     price: 50,
@@ -54,7 +54,7 @@ const productData = [
   {
     id: 4,
     tag: "Sold Out",
-    img: four,
+    image: four,
     name: "Black Umbrella",
     title: "New design 2023",
     price: 55,
@@ -68,7 +68,7 @@ const productData = [
   },
   {
     id: 5,
-    img: five,
+    image: five,
     name: "Travel Pet Carrier",
     title: "Matte black",
     price: 60,
@@ -82,7 +82,7 @@ const productData = [
   },
   {
     id: 6,
-    img: six,
+    image: six,
     name: "Rounded Buckle",
     title: "Classic green",
     price: 88,
@@ -97,7 +97,7 @@ const productData = [
   {
     id: 7,
     tag: "Limited Edition",
-    img: seven,
+    image: seven,
     name: "Waffle Knit Beanie",
     title: "New design 2023",
     price: 30,

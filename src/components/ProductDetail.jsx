@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import QuickViewPopup from "./QuickViewPopup";
+import { Link } from 'react-router-dom';
 
 const ProductDetail = ({ data }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -19,11 +20,13 @@ const ProductDetail = ({ data }) => {
         ) : (
           ""
         )}
-        <img
-          src={data.image}
-          alt=""
-          className="mx-auto mb-4 w-full bg-slate-200  object-cover  rounded-md transition-all duration-300 group-hover:scale-105"
-        />
+        <Link to="/men">
+          <img
+            src={data.image}
+            alt=""
+            className="mx-auto mb-4 w-full bg-slate-200  object-cover  rounded-md transition-all duration-300 group-hover:scale-105"
+          />
+        </Link>
         <div className="flex flex-wrap absolute bottom-20 xl:bottom-5 left-0 right-0 items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1/2">
           <button className="bg-black flex items-center gap-2 text-white  py-2 px-4 rounded-full  ">
             Add To Cart
