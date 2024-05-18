@@ -49,6 +49,12 @@ const Navbar = () => {
           </Link>
           <Link
             className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
+            to="/blogs"
+          >
+            Blogs
+          </Link>
+          <Link
+            className="text-lg font-medium  hover:bg-gray-100 lg:px-10 px-3 py-2 rounded-full transition-all"
             to="/contact"
           >
             Contact
