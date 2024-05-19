@@ -1,6 +1,8 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
+import AddBlog from "../dashboard/AddBlog";
 import AddProduct from "../dashboard/AddProduct";
 import Dashboard from "../dashboard/Dashboard";
+import ListBlog from "../dashboard/ListBlog";
 import ListProduct from "../dashboard/ListProduct";
 import Blogs from "../pages/Blogs";
 import Contact from "../pages/Contact";
@@ -9,8 +11,6 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProductsCategory from "../shared/ProductsCategory";
 import App from "./../App";
-import AddBlog from "../dashboard/AddBlog";
-import ListBlog from "../dashboard/ListBlog";
 
 const router = createBrowserRouter([
   {
@@ -66,22 +66,22 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Navigate to="addproduct" />,
+        element: <Navigate to="addProduct" />,
       },
       {
-        path: "addproduct",
+        path: "addProduct",
         element: <AddProduct />,
       },
       {
-        path: "listproduct",
+        path: "listProduct",
         element: <ListProduct />,
       },
       {
-        path: "addblog",
+        path: "addBlog",
         element: <AddBlog />,
       },
       {
-        path: "listblog",
+        path: "listBlog",
         element: <ListBlog />,
       },
     ],

@@ -10,7 +10,7 @@ const Blogs = () => {
     const fetchBlogData = async () => {
       try {
         const response = await axios.get(
-          "https://karbar-api.vercel.app/getblog"
+          "https://karbar-api.vercel.app/getBlog"
         );
         setBlogData(response.data);
       } catch (error) {

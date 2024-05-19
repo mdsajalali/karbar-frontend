@@ -25,7 +25,7 @@ const AddProduct = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://karbar-api.vercel.app/addproduct",
+        "https://karbar-api.vercel.app/addProduct",
         productDetails
       );
       toast.success("Product added successfully!");
