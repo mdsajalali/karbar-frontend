@@ -3,6 +3,7 @@ import axios from "axios";
 
 const useProductData = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,15 +12,17 @@ const useProductData = () => {
           "https://karbar-api.vercel.app/getproduct"
         );
         setProducts(response.data);
+        setLoading(false)
       } catch (error) {
         console.error("Error fetching product data:", error);
+        setLoading(false)
       }
     };
 
     fetchData();
   }, []);
 
-  return products;
+  return [products, loading];
 };
 
 export default useProductData;

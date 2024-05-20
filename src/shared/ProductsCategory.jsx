@@ -2,7 +2,7 @@ import ProductDetail from "../components/ProductDetail";
 import useProductData from './GetProduct';
 
 const ProductsCategory = ({ name }) => {
-  const productData = useProductData();
+  const [productData, loading] = useProductData();
   return (
     <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-10">
@@ -138,9 +138,13 @@ const ProductsCategory = ({ name }) => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-          {productData.map((data) => (
-            <ProductDetail key={data.id} data={data} />
-          ))}
+          {loading ? (
+            <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[#3abff8]"></div>
+          ) : (
+            productData.map((data) => (
+              <ProductDetail key={data.id} data={data} />
+            ))
+          )}
         </div>
       </div>
     </div>
