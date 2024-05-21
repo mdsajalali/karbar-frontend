@@ -6,51 +6,51 @@ import youtube from "../images/social-icons/youtube.svg";
 const Footer = () => {
   return (
     <footer className="bg-[#1D232A] py-12">
-      <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="mx-auto max-w-[1500px] px-4 py-5 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div className="mb-8">
-            <h2 className="text-white text-lg font-semibold mb-4">Dokan</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">Dokan</h2>
             <ul>
-              <li className="text-gray-300 flex items-center gap-2 cursor-pointer">
+              <li className="flex cursor-pointer items-center gap-2 text-gray-300">
                 <img className="w-5" src={facebook} alt="" />
                 <span>Facebook</span>
               </li>
-              <li className="text-gray-300 flex items-center gap-2 my-2  cursor-pointer">
+              <li className="my-2 flex cursor-pointer items-center gap-2  text-gray-300">
                 <img className="w-5" src={youtube} alt="" />
                 <span>Youtube</span>
               </li>
-              <li className="text-gray-300 flex items-center gap-2 mb-2  cursor-pointer">
+              <li className="mb-2 flex cursor-pointer items-center gap-2  text-gray-300">
                 <img className="w-5" src={telegram} alt="" />
                 <span>Telegram</span>
               </li>
-              <li className="text-gray-300 flex items-center gap-2  cursor-pointer">
+              <li className="flex cursor-pointer items-center gap-2  text-gray-300">
                 <img className="w-5" src={twitter} alt="" />
                 <span>Twitter</span>
               </li>
             </ul>
           </div>
           <div className="mb-8">
-            <h2 className="text-white text-lg font-semibold mb-4">
+            <h2 className="mb-4 text-lg font-semibold text-white">
               Quick Link
             </h2>
             <ul>
-              <li className="text-gray-300 cursor-pointer">Woman</li>
-              <li className="text-gray-300 my-2 cursor-pointer">Men</li>
-              <li className="text-gray-300 mb-2 cursor-pointer">Kids</li>
-              <li className="text-gray-300 cursor-pointer">Beauty</li>
+              <li className="cursor-pointer text-gray-300">Woman</li>
+              <li className="my-2 cursor-pointer text-gray-300">Men</li>
+              <li className="mb-2 cursor-pointer text-gray-300">Kids</li>
+              <li className="cursor-pointer text-gray-300">Beauty</li>
             </ul>
           </div>
           <div className="mb-8">
-            <h2 className="text-white text-lg font-semibold mb-4">Resources</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">Resources</h2>
             <ul>
-              <li className="text-gray-300 cursor-pointer">Support</li>
-              <li className="text-gray-300 cursor-pointer my-2">Contact</li>
-              <li className="text-gray-300 cursor-pointer mb-2">About</li>
-              <li className="text-gray-300 cursor-pointer">FAQ</li>
+              <li className="cursor-pointer text-gray-300">Support</li>
+              <li className="my-2 cursor-pointer text-gray-300">Contact</li>
+              <li className="mb-2 cursor-pointer text-gray-300">About</li>
+              <li className="cursor-pointer text-gray-300">FAQ</li>
             </ul>
           </div>
           <div className="mb-8">
-            <h2 className="text-white text-lg font-semibold mb-4">Subscribe</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">Subscribe</h2>
             <ul>
               <li className="text-gray-300">
                 Enter your email below to be the first to know about new
@@ -58,7 +58,7 @@ const Footer = () => {
               </li>
               <input
                 type="email"
-                className="bg-gray-800 mt-2 appearance-none border border-gray-700 rounded py-2 px-4 text-white mr-2 mb-2 sm:mb-0"
+                className="mb-2 mr-2 mt-2 appearance-none rounded border border-gray-700 bg-gray-800 px-4 py-2 text-white sm:mb-0"
                 placeholder="Your email"
               />
             </ul>
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t text-center">
-        <p className="text-white mt-5 text-[15px]">
+        <p className="mt-5 text-[15px] text-white">
           © All Right Reserved Posh Coder
         </p>
       </div>

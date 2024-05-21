@@ -24,6 +24,6 @@ const Home = () => {
       <Testimonial />
     </>
   );
-}
+};
 
-export default Home
+export default Home;

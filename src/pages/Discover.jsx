@@ -29,12 +29,12 @@ const discoverData = [
 
 const Discovers = () => {
   return (
-    <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8 my-10">
-      <h1 className="md:text-4xl text-2xl font-medium mt-10 mb-10">
+    <div className="mx-auto my-10 max-w-[1500px] px-4 py-5 sm:px-6 lg:px-8">
+      <h1 className="mb-10 mt-10 text-2xl font-medium md:text-4xl">
         Discover more. Good things are waiting for you
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {discoverData.map((data) => (
           <DiscoverProduct key={data.id} data={data} />
         ))}

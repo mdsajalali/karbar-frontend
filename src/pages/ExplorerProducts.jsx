@@ -11,27 +11,27 @@ const ExplorerProducts = () => {
   const beauty = projectData.filter((item) => item.category === "beauty");
 
   return (
-    <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-center font-semibold my-10 xl:text-5xl md:text-3xl text-2xl">
+    <div className="mx-auto max-w-[1500px] px-4 py-5 sm:px-6 lg:px-8">
+      <h1 className="my-10 text-center text-2xl font-semibold md:text-3xl xl:text-5xl">
         Start exploring.
       </h1>
 
       <div>
         <Tabs>
-          <TabList className="flex flex-wrap gap-2 justify-center">
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
+          <TabList className="flex flex-wrap justify-center gap-2">
+            <Tab className="mr-2 cursor-pointer rounded-tl-md rounded-tr-md bg-gray-200 px-4 py-2 text-gray-800 transition duration-300 hover:bg-gray-300 focus:outline-none">
               Women
             </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
+            <Tab className="mr-2 cursor-pointer rounded-tl-md rounded-tr-md bg-gray-200 px-4 py-2 text-gray-800 transition duration-300 hover:bg-gray-300 focus:outline-none">
               Man
             </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
+            <Tab className="mr-2 cursor-pointer rounded-tl-md rounded-tr-md bg-gray-200 px-4 py-2 text-gray-800 transition duration-300 hover:bg-gray-300 focus:outline-none">
               Kids
             </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
+            <Tab className="mr-2 cursor-pointer rounded-tl-md rounded-tr-md bg-gray-200 px-4 py-2 text-gray-800 transition duration-300 hover:bg-gray-300 focus:outline-none">
               Sports
             </Tab>
-            <Tab className="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-tl-md rounded-tr-md mr-2 transition duration-300 hover:bg-gray-300 focus:outline-none">
+            <Tab className="mr-2 cursor-pointer rounded-tl-md rounded-tr-md bg-gray-200 px-4 py-2 text-gray-800 transition duration-300 hover:bg-gray-300 focus:outline-none">
               Beauty
             </Tab>
           </TabList>

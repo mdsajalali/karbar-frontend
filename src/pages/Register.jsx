@@ -15,7 +15,7 @@ const Register = () => {
                 id="name"
                 name="name"
                 placeholder="Name"
-                className="w-full p-3 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full rounded-md border p-3 text-gray-700 focus:border-[#3abff8] focus:outline-none"
               />
             </div>
             <div className="mb-4">
@@ -24,7 +24,7 @@ const Register = () => {
                 id="email"
                 name="email"
                 placeholder="Email"
-                className="w-full p-3 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full rounded-md border p-3 text-gray-700 focus:border-[#3abff8] focus:outline-none"
               />
             </div>
             <div className="mb-4">
@@ -33,7 +33,7 @@ const Register = () => {
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="w-full p-3 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full rounded-md border p-3 text-gray-700 focus:border-[#3abff8] focus:outline-none"
               />
             </div>
 

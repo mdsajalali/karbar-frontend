@@ -10,7 +10,7 @@ const Blogs = () => {
     const fetchBlogData = async () => {
       try {
         const response = await axios.get(
-          "https://karbar-api.vercel.app/getBlog"
+          "https://karbar-api.vercel.app/getBlog",
         );
         setBlogData(response.data);
       } catch (error) {
@@ -29,8 +29,8 @@ const Blogs = () => {
   };
 
   return (
-    <div className="max-w-[1000px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
-      <h1 className="xl:text-3xl text-2xl md:text-4xl font-bold mb-6">
+    <div className="mx-auto max-w-[1000px] px-4 py-5 sm:px-6 lg:px-8">
+      <h1 className="mb-6 text-2xl font-bold md:text-4xl xl:text-3xl">
         Writing
       </h1>
       <hr className="my-8 border-gray-300" />
@@ -38,7 +38,7 @@ const Blogs = () => {
         {blogData.map((blog) => (
           <div className="rounded-md bg-gray-100" key={blog.id}>
             <img
-              className="w-full lg:h-[400px] object-cover rounded-t-md"
+              className="w-full rounded-t-md object-cover lg:h-[400px]"
               src={blog.image}
               alt={blog.title}
             />
@@ -49,11 +49,11 @@ const Blogs = () => {
                   {expandedDesc[blog.id]
                     ? blog.desc
                     : blog.desc.length > 200
-                    ? blog.desc.slice(0, 200) + "..."
-                    : blog.desc}
+                      ? blog.desc.slice(0, 200) + "..."
+                      : blog.desc}
                   {blog.desc.length > 200 && (
                     <span
-                      className="text-[#3abff8] cursor-pointer ml-1"
+                      className="ml-1 cursor-pointer text-[#3abff8]"
                       onClick={() => toggleExpand(blog.id)}
                     >
                       {expandedDesc[blog.id] ? "Read Less" : "Read More"}

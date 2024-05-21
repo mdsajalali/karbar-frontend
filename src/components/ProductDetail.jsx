@@ -11,10 +11,10 @@ const ProductDetail = ({ data }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto border border-gray-300 rounded-md shadow-md p-6 text-center mt-10">
-      <div className="relative group">
+    <div className="mx-auto mt-10 max-w-md rounded-md border border-gray-300 p-6 text-center shadow-md">
+      <div className="group relative">
         {data.tag ? (
-          <h1 className="text-[15px] absolute left-1 font-medium mb-4 top-1 bg-white text-gray-500 px-5 rounded-full py-1">
+          <h1 className="absolute left-1 top-1 mb-4 rounded-full bg-white px-5 py-1 text-[15px] font-medium text-gray-500">
             {data?.tag}
           </h1>
         ) : (
@@ -25,26 +25,26 @@ const ProductDetail = ({ data }) => {
             onClick={window.scrollTo(0, 0)}
             src={data.image}
             alt=""
-            className="mx-auto mb-4 w-full bg-slate-200  object-cover  rounded-md transition-all duration-300 group-hover:scale-105"
+            className="mx-auto mb-4 w-full rounded-md  bg-slate-200  object-cover transition-all duration-300 group-hover:scale-105"
           />
         </Link>
-        <div className="flex flex-wrap absolute bottom-20 xl:bottom-5 left-0 right-0 items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1/2">
-          <button className="bg-black flex items-center gap-2 text-white  py-2 px-4 rounded-full  ">
+        <div className="absolute bottom-20 left-0 right-0 flex translate-y-1/2 transform flex-wrap items-center justify-center gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 xl:bottom-5">
+          <button className="flex items-center gap-2 rounded-full bg-black  px-4 py-2 text-white  ">
             Add To Cart
           </button>
           <button
             onClick={togglePopup}
-            className="bg-white flex items-center gap-2    py-2 px-4 rounded-full  "
+            className="flex items-center gap-2 rounded-full    bg-white px-4 py-2  "
           >
             Quick View
           </button>
         </div>
       </div>
-      <h2 className="text-lg font-semibold mb-2">{data.name}</h2>
+      <h2 className="mb-2 text-lg font-semibold">{data.name}</h2>
       <h3 className="text-md mb-2">{data.title}</h3>
-      <div className="flex items-center justify-evenly mb-4">
-        <span className="text-lg font-bold mr-2">${data.price}.00</span>
-        <span className="text-sm flex items-center gap-1 justify-center text-gray-600">
+      <div className="mb-4 flex items-center justify-evenly">
+        <span className="mr-2 text-lg font-bold">${data.price}.00</span>
+        <span className="flex items-center justify-center gap-1 text-sm text-gray-600">
           <FaStar color="fbbf24" /> {data.rating} ({data.reviews} reviews)
         </span>
       </div>

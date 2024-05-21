@@ -41,8 +41,8 @@ const deliveryData = [
 
 const Delivery = () => {
   return (
-    <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">
+    <div className="mx-auto max-w-[1500px] px-4 py-5 sm:px-6 lg:px-8">
+      <h1 className="mb-4 text-3xl font-bold md:text-4xl">
         Product Delivery Process
       </h1>
       <p className="my-2 text-lg md:text-xl">
@@ -54,7 +54,7 @@ const Delivery = () => {
       </p>
       <hr className="my-8 border-gray-300" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {deliveryData.map((data) => (
           <DeliveryProduct key={data.id} data={data} />
         ))}

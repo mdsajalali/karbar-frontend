@@ -31,8 +31,8 @@ const AddBlog = () => {
   };
 
   return (
-    <div className="p-4 md:p-8 max-w-4xl mx-auto mt-4 bg-white rounded-lg ">
-      <h1 className="xl:text-3xl text-2xl md:text-4xl font-bold text-center mb-6">
+    <div className="mx-auto mt-4 max-w-4xl rounded-lg bg-white p-4 md:p-8 ">
+      <h1 className="mb-6 text-center text-2xl font-bold md:text-4xl xl:text-3xl">
         Add Blog
       </h1>
       <form onSubmit={handleSubmit}>
@@ -48,7 +48,7 @@ const AddBlog = () => {
             value={formData.image}
             placeholder="Image URL"
             onChange={handleChange}
-            className="border rounded-md px-4 py-2 w-full"
+            className="w-full rounded-md border px-4 py-2"
           />
         </div>
         <div className="mb-4">
@@ -63,7 +63,7 @@ const AddBlog = () => {
             value={formData.title}
             onChange={handleChange}
             placeholder="Title"
-            className="border rounded-md px-4 py-2 w-full"
+            className="w-full rounded-md border px-4 py-2"
           />
         </div>
         <div className="mb-4">
@@ -77,13 +77,13 @@ const AddBlog = () => {
             value={formData.desc}
             onChange={handleChange}
             placeholder="Blog Description"
-            className="border rounded-md px-4 py-2 w-full h-32 resize-none"
+            className="h-32 w-full resize-none rounded-md border px-4 py-2"
           ></textarea>
         </div>
         <div className="text-center">
           <button
             type="submit"
-            className="w-full h-12 bg-[#3abff8] text-white font-semibold rounded-lg hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+            className="h-12 w-full rounded-lg bg-[#3abff8] font-semibold text-white hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
           >
             Add Blog
           </button>

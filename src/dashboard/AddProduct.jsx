@@ -26,7 +26,7 @@ const AddProduct = () => {
     try {
       await axios.post(
         "https://karbar-api.vercel.app/addProduct",
-        productDetails
+        productDetails,
       );
       toast.success("Product added successfully!");
       setProductDetails({
@@ -48,12 +48,12 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="p-4 md:p-8 max-w-4xl mx-auto mt-4 bg-white rounded-lg  ">
-      <h1 className="xl:text-3xl text-2xl md:text-4xl font-bold text-center mb-6">
+    <div className="mx-auto mt-4 max-w-4xl rounded-lg bg-white p-4 md:p-8  ">
+      <h1 className="mb-6 text-center text-2xl font-bold md:text-4xl xl:text-3xl">
         Add Product
       </h1>
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="mb-4">
             <p>Name</p>
             <input
@@ -63,7 +63,7 @@ const AddProduct = () => {
               name="name"
               required
               placeholder="Product Name"
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             />
           </div>
           <div className="mb-4">
@@ -75,7 +75,7 @@ const AddProduct = () => {
               name="title"
               required
               placeholder="Product Title"
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             />
           </div>
           <div className="mb-4">
@@ -87,7 +87,7 @@ const AddProduct = () => {
               name="image"
               required
               placeholder="Image URL"
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             />
           </div>
           <div className="mb-4">
@@ -99,7 +99,7 @@ const AddProduct = () => {
               name="price"
               required
               placeholder="Product Price"
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             />
           </div>
           <div className="mb-4">
@@ -111,7 +111,7 @@ const AddProduct = () => {
               name="rating"
               required
               placeholder="Product Rating"
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             />
           </div>
           <div className="mb-4">
@@ -123,7 +123,7 @@ const AddProduct = () => {
               name="reviews"
               required
               placeholder="Product Reviews"
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             />
           </div>
           <div className="mb-4">
@@ -132,7 +132,7 @@ const AddProduct = () => {
               value={productDetails.category}
               onChange={handleChange}
               name="category"
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             >
               <option value="">Select Category</option>
               <option value="women">Women</option>
@@ -149,7 +149,7 @@ const AddProduct = () => {
               onChange={handleChange}
               name="sizes"
               required
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             >
               <option value="">Select Size</option>
               <option value="S">S</option>
@@ -159,7 +159,7 @@ const AddProduct = () => {
             </select>
           </div>
           <div className="mb-4">
-            <label htmlFor="color" className="block mb-2">
+            <label htmlFor="color" className="mb-2 block">
               Color
             </label>
             <select
@@ -168,7 +168,7 @@ const AddProduct = () => {
               name="color"
               id="color"
               required
-              className="w-full h-12 border border-gray-300 rounded px-4 mt-2"
+              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
             >
               <option value="">Select Color</option>
               <option value="Red">Red</option>
@@ -186,14 +186,14 @@ const AddProduct = () => {
               name="desc"
               required
               placeholder="Product Description"
-              className="w-full h-32 border border-gray-300 rounded px-4 py-2 mt-2"
+              className="mt-2 h-32 w-full rounded border border-gray-300 px-4 py-2"
             />
           </div>
         </div>
 
         <button
           type="submit"
-          className="w-full h-12 bg-[#3abff8] text-white font-semibold rounded-lg hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+          className="h-12 w-full rounded-lg bg-[#3abff8] font-semibold text-white hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
         >
           Add Product
         </button>

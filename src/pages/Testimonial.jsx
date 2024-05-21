@@ -2,8 +2,8 @@ import client from "../images/client-img.png";
 import testimonial_img from "../images/testimonial_img.png";
 const Testimonial = () => {
   return (
-    <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
         <div>
           <img
             src={testimonial_img}
@@ -12,11 +12,11 @@ const Testimonial = () => {
           />
         </div>
         <div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+          <h1 className="mb-4 text-3xl font-bold md:text-5xl">
             What our clients say about us
           </h1>
           <div>
-            <p className="text-base md:text-lg mb-4">
+            <p className="mb-4 text-base md:text-lg">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
@@ -27,10 +27,10 @@ const Testimonial = () => {
               <img
                 src={client}
                 alt="Client"
-                className="w-12 h-12 rounded-full mr-4"
+                className="mr-4 h-12 w-12 rounded-full"
               />
               <div>
-                <p className="text-lg font-semibold mb-1">John Doe</p>
+                <p className="mb-1 text-lg font-semibold">John Doe</p>
                 <p className="text-gray-600">SEO Specialist</p>
               </div>
             </div>

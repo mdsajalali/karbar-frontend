@@ -10,7 +10,7 @@ const ListProduct = () => {
     const fetchProductData = async () => {
       try {
         const response = await axios.get(
-          "https://karbar-api.vercel.app/getProduct"
+          "https://karbar-api.vercel.app/getProduct",
         );
         setProductData(response.data);
       } catch (error) {
@@ -24,11 +24,11 @@ const ListProduct = () => {
   const productDelete = async (productId) => {
     try {
       await axios.delete(
-        `https://karbar-api.vercel.app/deleteProduct/${productId}`
+        `https://karbar-api.vercel.app/deleteProduct/${productId}`,
       );
 
       setProductData(
-        productData.filter((product) => product._id !== productId)
+        productData.filter((product) => product._id !== productId),
       );
     } catch (error) {
       console.error("Error deleting product:", error);
@@ -36,8 +36,8 @@ const ListProduct = () => {
   };
 
   return (
-    <div className="p-4 lg:p-8 w-full mx-auto mt-4 bg-white rounded-lg shadow-md overflow-x-auto">
-      <h1 className="text-2xl font-bold mb-4">All Product List</h1>
+    <div className="mx-auto mt-4 w-full overflow-x-auto rounded-lg bg-white p-4 shadow-md lg:p-8">
+      <h1 className="mb-4 text-2xl font-bold">All Product List</h1>
       <table className="w-full">
         <thead>
           <tr className="font-semibold">
@@ -56,7 +56,11 @@ const ListProduct = () => {
             <tr key={idx} className="border border-gray-300">
               <td className="  p-4 text-center">{idx + 1}</td>
               <td className="p-4 text-center">
-                <img className="w-20 h-20 object-cover" src={data.image} alt="" />
+                <img
+                  className="h-20 w-20 object-cover"
+                  src={data.image}
+                  alt=""
+                />
               </td>
               <td className="p-4 text-center">{data.name}</td>
               <td className=" p-4 text-center">{data.title}</td>

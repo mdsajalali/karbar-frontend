@@ -1,12 +1,12 @@
 const ShopProduct = ({ data }) => {
   return (
-    <div className="flex items-center justify-center flex-col mx-auto bg-white rounded-md my-10 ">
+    <div className="mx-auto my-10 flex flex-col items-center justify-center rounded-md bg-white ">
       <img
         src={data.img}
         alt={data.title}
-        className="w-full bg-slate-200  object-cover mb-4 rounded-md"
+        className="mb-4 w-full  rounded-md bg-slate-200 object-cover"
       />
-      <h1 className="text-xl font-bold mb-2">{data.title}</h1>
+      <h1 className="mb-2 text-xl font-bold">{data.title}</h1>
       <p className="text-gray-600">{data.quantity}+ products</p>
     </div>
   );

@@ -4,28 +4,28 @@ import list_product_icon from "../images/Product_list_icon.svg";
 
 const Sidebar = () => {
   return (
-    <div className=" flex flex-col    w-full lg:max-w-xs lg:h-screen lg:mb-0 mb-5 bg-white lg:border">
+    <div className=" mb-5 flex    w-full flex-col bg-white lg:mb-0 lg:h-screen lg:max-w-xs lg:border">
       <Link to="addProduct" className="no-underline">
-        <div className=" flex mt-5   mx-10 py-2 px-5 rounded bg-gray-200">
-          <img src={add_product_icon} alt="" className="w-6 h-6 mr-5" />
+        <div className=" mx-10 mt-5   flex rounded bg-gray-200 px-5 py-2">
+          <img src={add_product_icon} alt="" className="mr-5 h-6 w-6" />
           <p>Add Product</p>
         </div>
       </Link>
       <Link to="listProduct" className="no-underline">
-        <div className=" flex mt-5   mx-10 py-2 px-5 rounded bg-gray-200">
-          <img src={list_product_icon} alt="" className="w-6 h-6 mr-5" />
+        <div className=" mx-10 mt-5   flex rounded bg-gray-200 px-5 py-2">
+          <img src={list_product_icon} alt="" className="mr-5 h-6 w-6" />
           <p>Product List</p>
         </div>
       </Link>
       <Link to="addBlog" className="no-underline">
-        <div className=" flex mt-5   mx-10 py-2 px-5 rounded bg-gray-200">
-          <img src={add_product_icon} alt="" className="w-6 h-6 mr-5" />
+        <div className=" mx-10 mt-5   flex rounded bg-gray-200 px-5 py-2">
+          <img src={add_product_icon} alt="" className="mr-5 h-6 w-6" />
           <p>Add Blog</p>
         </div>
       </Link>
       <Link to="listBlog" className="no-underline">
-        <div className=" flex mt-5   mx-10 py-2 px-5 rounded bg-gray-200">
-          <img src={list_product_icon} alt="" className="w-6 h-6 mr-5" />
+        <div className=" mx-10 mt-5   flex rounded bg-gray-200 px-5 py-2">
+          <img src={list_product_icon} alt="" className="mr-5 h-6 w-6" />
           <p>Blog List</p>
         </div>
       </Link>

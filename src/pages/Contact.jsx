@@ -6,17 +6,17 @@ import youtube from "../images/social-icons/youtube.svg";
 
 const Contact = () => {
   return (
-    <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <h1 className="mb-8 text-center text-3xl font-bold md:text-4xl">
         Contact Us
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-8 items-center">
+      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20">
         <div>
-          <div className="max-w-md mx-auto">
+          <div className="mx-auto max-w-md">
             <div className="mb-4">
               <label
                 htmlFor="fullname"
-                className="block text-gray-700 font-medium mb-2"
+                className="mb-2 block font-medium text-gray-700"
               >
                 Full Name*:
               </label>
@@ -25,13 +25,13 @@ const Contact = () => {
                 id="fullname"
                 name="fullname"
                 placeholder="Name"
-                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full rounded-md border px-3 py-2 text-gray-700 focus:border-[#3abff8] focus:outline-none"
               />
             </div>
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-gray-700 font-medium mb-2"
+                className="mb-2 block font-medium text-gray-700"
               >
                 Email*:
               </label>
@@ -40,18 +40,18 @@ const Contact = () => {
                 id="email"
                 name="email"
                 placeholder="Email"
-                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full rounded-md border px-3 py-2 text-gray-700 focus:border-[#3abff8] focus:outline-none"
               />
             </div>
             <div className="mb-4">
               <label
                 htmlFor="message"
-                className="block text-gray-700 font-medium mb-2"
+                className="mb-2 block font-medium text-gray-700"
               >
                 Message*:
               </label>
               <textarea
-                className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-[#3abff8]"
+                className="w-full rounded-md border px-3 py-2 text-gray-700 focus:border-[#3abff8] focus:outline-none"
                 placeholder="Message"
                 rows={4}
               />
@@ -59,7 +59,7 @@ const Contact = () => {
             <div className="text-center ">
               <button
                 type="submit"
-                className="py-2 flex items-center gap-2 px-4 bg-black text-white font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                className="flex items-center gap-2 rounded-md bg-black px-4 py-2 font-semibold text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
               >
                 Send Message <FiSend className="mr-2" />
               </button>
@@ -67,13 +67,13 @@ const Contact = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-xl font-semibold mb-4">Contact Information</h2>
-          <div className="flex items-center mb-4">
-            <FiMapPin className="text-gray-600 mr-2" />
+          <h2 className="mb-4 text-xl font-semibold">Contact Information</h2>
+          <div className="mb-4 flex items-center">
+            <FiMapPin className="mr-2 text-gray-600" />
             <p>1234 Main Street, City, Country</p>
           </div>
-          <div className="flex items-center mb-4">
-            <FiMail className="text-gray-600 mr-2" />
+          <div className="mb-4 flex items-center">
+            <FiMail className="mr-2 text-gray-600" />
             <a
               href="mailto:info@example.com"
               className="text-[#3abff8] hover:underline"
@@ -81,8 +81,8 @@ const Contact = () => {
               poshcoder@gmail.com
             </a>
           </div>
-          <div className="flex items-center mb-4">
-            <FiPhone className="text-gray-600 mr-2" />
+          <div className="mb-4 flex items-center">
+            <FiPhone className="mr-2 text-gray-600" />
             <p>(123) 456-7890</p>
           </div>
           <div className="flex items-center space-x-4">
