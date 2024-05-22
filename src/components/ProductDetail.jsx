@@ -22,7 +22,6 @@ const ProductDetail = ({ data }) => {
         )}
         <Link to="/men">
           <img
-            onClick={window.scrollTo(0, 0)}
             src={data.image}
             alt=""
             className="mx-auto mb-4 w-full rounded-md  bg-slate-200  object-cover transition-all duration-300 group-hover:scale-105"
