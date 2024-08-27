@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import google from "../images/google.png";
 
 const Login = () => {
+  const googleLogin = () => {
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
   return (
     <div className="flex">
       <div className="flex-1 bg-slate-100">
@@ -44,7 +47,10 @@ const Login = () => {
             <div className="h-[1px] w-1/2 bg-slate-400"></div>
           </div>
           <div>
-            <div className="my-5 flex cursor-pointer items-center justify-center gap-1 rounded-sm border border-black bg-white p-1 transition-all hover:tracking-wide ">
+            <div
+              onClick={googleLogin}
+              className="my-5 flex cursor-pointer items-center justify-center gap-1 rounded-sm border border-black bg-white p-1 transition-all hover:tracking-wide "
+            >
               <img className="w-10" src={google} alt="Google" />
               <p className="text-[18px] font-semibold">Sign In With Google</p>
             </div>

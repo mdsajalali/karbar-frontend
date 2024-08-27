@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { RiMenu3Fill } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
@@ -6,9 +6,46 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const logout = () => {
+    window.open("http://localhost:5000/auth/logout", "_self");
+  };
+
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  const [user, setUser] = useState(null);
+
+  console.log("user", user);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/auth/login/success",
+          {
+            method: "GET",
+            credentials: "include",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          },
+        );
+
+        if (response.status === 200) {
+          const resData = await response.json();
+          setUser(resData.user);
+        } else {
+          throw new Error("Authentication has failed!");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getUser();
+  }, []);
 
   return (
     <header className="border-b">
@@ -46,12 +83,22 @@ const Navbar = () => {
               0
             </span>
           </div>
-          <Link
-            to="/login"
-            className="rounded bg-[#3abff8] px-4 py-2 font-medium text-white hover:bg-[#58add2]"
-          >
-            SIGN IN
-          </Link>
+          {user ? (
+            <Link
+              onClick={logout}
+              to="/login"
+              className="rounded bg-[#3abff8] px-4 py-2 font-medium text-white hover:bg-[#58add2]"
+            >
+              Logout
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="rounded bg-[#3abff8] px-4 py-2 font-medium text-white hover:bg-[#58add2]"
+            >
+              Login
+            </Link>
+          )}
         </div>
 
         <div className="lg:hidden">
