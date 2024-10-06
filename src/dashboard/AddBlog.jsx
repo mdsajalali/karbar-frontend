@@ -22,7 +22,9 @@ const AddBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://karbar-api.vercel.app/addBlog", formData);
+      await axios.post("https://karbar-api.vercel.app/addBlog", formData,  {
+  withCredentials: true,  
+});
       toast.success("Blog added successfully!");
       setFormData(initialFormData);
     } catch (error) {

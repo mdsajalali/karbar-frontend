@@ -11,6 +11,9 @@ const ListProduct = () => {
       try {
         const response = await axios.get(
           "https://karbar-api.vercel.app/getProduct",
+          {
+            withCredentials: true,  
+          },
         );
         setProductData(response.data);
       } catch (error) {

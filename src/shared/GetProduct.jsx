@@ -10,6 +10,9 @@ const useProductData = () => {
       try {
         const response = await axios.get(
           "https://karbar-api.vercel.app/getproduct",
+          {
+            withCredentials: true, 
+          },
         );
         setProducts(response.data);
         setLoading(false);

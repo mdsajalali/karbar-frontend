@@ -11,6 +11,9 @@ const Blogs = () => {
       try {
         const response = await axios.get(
           "https://karbar-api.vercel.app/getBlog",
+          {
+            withCredentials: true, 
+          },
         );
         setBlogData(response.data);
       } catch (error) {
