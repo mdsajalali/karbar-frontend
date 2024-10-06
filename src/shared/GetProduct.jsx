@@ -3,19 +3,19 @@ import { useEffect, useState } from "react";
 
 const useProductData = () => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://karbar-api.vercel.app/getproduct"
+          "https://karbar-api.vercel.app/getproduct",
         );
         setProducts(response.data);
-        setLoading(false)
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching product data:", error);
-        setLoading(false)
+        setLoading(false);
       }
     };
 
