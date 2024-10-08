@@ -1,13 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 const PopularProduct = ({ data }) => {
+  const [selectedImage, setSelectedImage] = useState(data.img);
+
+  const handleImageClick = (img) => {
+    setSelectedImage(img);
+  };
+
   return (
-    <div className=" my-5 overflow-hidden rounded shadow-lg">
+    <div className="my-5 overflow-hidden rounded shadow-lg">
       <div>
         <img
-          className="mb-4 w-full  rounded-md bg-slate-200 object-cover"
-          src={data.img}
+          className="mb-4 w-full rounded-md bg-slate-200 object-cover"
+          src={selectedImage}
           alt={data.title}
         />
       </div>
@@ -15,9 +21,10 @@ const PopularProduct = ({ data }) => {
         {data?.images?.map((img, index) => (
           <img
             key={index}
-            className="h-24 w-[140px] rounded-md  object-cover"
+            className="h-24 w-[140px] cursor-pointer rounded-md object-cover"
             src={img}
             alt={`Product Image ${index + 1}`}
+            onClick={() => handleImageClick(img)}
           />
         ))}
       </div>

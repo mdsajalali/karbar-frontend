@@ -21,7 +21,7 @@ const useProductData = ({ priceSearch, category, size, color }) => {
     };
 
     fetchData();
-  }, [priceSearch, category, size, color]);
+  }, [priceSearch, category, size, color, axiosInstance]);
 
   return [products, loading];
 };
