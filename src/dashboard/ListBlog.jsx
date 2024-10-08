@@ -41,7 +41,7 @@ const ListBlog = () => {
           </tr>
         </thead>
         <tbody>
-          {blogData.map((data, idx) => (
+          {blogData?.map((data, idx) => (
             <tr key={idx} className="border border-gray-300">
               <td className="  p-4 text-center">{idx + 1}</td>
               <td className="p-4 text-center">

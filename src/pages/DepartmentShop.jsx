@@ -39,7 +39,7 @@ const DepartmentShop = () => {
       </h1>
 
       <div className="grid-5 grid grid-cols-1 md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4">
-        {shopData.map((data) => (
+        {shopData?.map((data) => (
           <ShopProduct key={data.id} data={data} />
         ))}
       </div>

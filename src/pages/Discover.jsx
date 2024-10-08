@@ -35,7 +35,7 @@ const Discovers = () => {
       </h1>
 
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {discoverData.map((data) => (
+        {discoverData?.map((data) => (
           <DiscoverProduct key={data.id} data={data} />
         ))}
       </div>

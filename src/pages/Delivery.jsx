@@ -55,7 +55,7 @@ const Delivery = () => {
       <hr className="my-8 border-gray-300" />
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {deliveryData.map((data) => (
+        {deliveryData?.map((data) => (
           <DeliveryProduct key={data.id} data={data} />
         ))}
       </div>

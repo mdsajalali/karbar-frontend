@@ -49,7 +49,7 @@ const ListProduct = () => {
           </tr>
         </thead>
         <tbody>
-          {productData.map((data, idx) => (
+          {productData?.map((data, idx) => (
             <tr key={idx} className="border border-gray-300">
               <td className="  p-4 text-center">{idx + 1}</td>
               <td className="p-4 text-center">

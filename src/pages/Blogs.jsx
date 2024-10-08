@@ -25,7 +25,7 @@ const Blogs = () => {
       </h1>
       <hr className="my-8 border-gray-300" />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {blogData.map((blog) => (
+        {blogData?.map((blog) => (
           <div
             className="flex flex-col justify-between rounded-md bg-gray-100"
             key={blog.id}

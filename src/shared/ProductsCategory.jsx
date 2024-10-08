@@ -122,7 +122,7 @@ const ProductsCategory = ({ name }) => {
                 Category
               </label>
               <div>
-                {categoryOptions.map((cat) => (
+                {categoryOptions?.map((cat) => (
                   <div key={cat.id} className="flex items-center">
                     <input
                       type="checkbox"
@@ -146,7 +146,7 @@ const ProductsCategory = ({ name }) => {
                 Size
               </label>
               <div>
-                {sizeOptions.map((option) => (
+                {sizeOptions?.map((option) => (
                   <div key={option.id} className="flex items-center">
                     <input
                       type="checkbox"
@@ -170,7 +170,7 @@ const ProductsCategory = ({ name }) => {
                 Color
               </label>
               <div>
-                {colorOptions.map((option) => (
+                {colorOptions?.map((option) => (
                   <div key={option.id} className="flex items-center">
                     <input
                       type="checkbox"
