@@ -16,6 +16,8 @@ const Navbar = () => {
 
   const [user, setUser] = useState(null);
 
+  console.log("User", user)
+
   useEffect(() => {
     const getUser = async () => {
       try {
