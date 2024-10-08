@@ -1,20 +1,16 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import cross_icon from "../images/cross_icon.png";
+import useAxios from "../hooks/useAxios";
 
 const ListProduct = () => {
   const [productData, setProductData] = useState([]);
+  const axiosInstance = useAxios();
 
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const response = await axios.get(
-          "https://karbar-api.vercel.app/getProduct",
-          {
-            withCredentials: true,  
-          },
-        );
+        const response = await axiosInstance.get("/getProduct");
         setProductData(response.data);
       } catch (error) {
         console.error("Error fetching product data:", error);
@@ -26,9 +22,7 @@ const ListProduct = () => {
 
   const productDelete = async (productId) => {
     try {
-      await axios.delete(
-        `https://karbar-api.vercel.app/deleteProduct/${productId}`,
-      );
+      await axiosInstance.delete(`/deleteProduct/${productId}`);
 
       setProductData(
         productData.filter((product) => product._id !== productId),

@@ -3,7 +3,7 @@ import google from "../images/google.png";
 
 const Register = () => {
   const googleLogin = () => {
-    window.open("https://karbar-api.vercel.app/auth/google", "_self");
+    window.open("https://karbar-api.vercel.app", "_self");
   };
   return (
     <div className="flex">

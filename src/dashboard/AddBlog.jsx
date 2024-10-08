@@ -1,8 +1,9 @@
-import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import useAxios from "../hooks/useAxios";
 
 const AddBlog = () => {
+  const axiosInstance = useAxios();
   const initialFormData = {
     image: "",
     title: "",
@@ -22,9 +23,7 @@ const AddBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://karbar-api.vercel.app/addBlog", formData,  {
-  withCredentials: true,  
-});
+      await axiosInstance.post("/addBlog", formData);
       toast.success("Blog added successfully!");
       setFormData(initialFormData);
     } catch (error) {

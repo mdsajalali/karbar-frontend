@@ -1,20 +1,15 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import useAxios from "../hooks/useAxios";
 
 const Blogs = () => {
   const [blogData, setBlogData] = useState([]);
   const [expandedDesc, setExpandedDesc] = useState({});
-  console.log(blogData);
+  const axiosInstance = useAxios();
 
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get(
-          "https://karbar-api.vercel.app/getBlog",
-          {
-            withCredentials: true, 
-          },
-        );
+        const response = await axiosInstance.get("/getBlog");
         setBlogData(response.data);
       } catch (error) {
         console.error("Error fetching blog data:", error);

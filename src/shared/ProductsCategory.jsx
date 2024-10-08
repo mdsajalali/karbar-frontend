@@ -1,11 +1,81 @@
+import { useState } from "react";
 import ProductDetail from "../components/ProductDetail";
-import useProductData from './GetProduct';
+import useProductData from "./GetProduct";
 
 const ProductsCategory = ({ name }) => {
-  const [productData, loading] = useProductData();
+  const [priceSearch, setPriceSearch] = useState([]);
+  const numericPriceSearch = Number(priceSearch);
+  const [size, setSize] = useState([]);
+  const [color, setColor] = useState([]);
+
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const categoryOptions = [
+    { id: "women", label: "Women" },
+    { id: "man", label: "Man" },
+    { id: "kids", label: "Kids" },
+    { id: "sports", label: "Sports" },
+    { id: "beauty", label: "Beauty" },
+  ];
+
+  const handleCategoryChange = (value) => {
+    setSelectedCategories((prev) =>
+      prev.includes(value)
+        ? prev.filter((category) => category !== value)
+        : [...prev, value],
+    );
+  };
+
+  const sizeOptions = [
+    { id: "s", label: "S" },
+    { id: "m", label: "M" },
+    { id: "l", label: "L" },
+    { id: "xl", label: "XL" },
+  ];
+
+  const handleSizeChange = (value) => {
+    setSize((prev) =>
+      prev.includes(value) ? prev.filter((s) => s !== value) : [...prev, value],
+    );
+  };
+
+  const colorOptions = [
+    { id: "red", label: "Red" },
+    { id: "blue", label: "Blue" },
+    { id: "green", label: "Green" },
+    { id: "pink", label: "Pink" },
+    { id: "brown", label: "Brown" },
+  ];
+
+  const handleColorChange = (value) => {
+    setColor((prev) =>
+      prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value],
+    );
+  };
+
+  const [productData, loading] = useProductData({
+    priceSearch: numericPriceSearch,
+    category: selectedCategories,
+    size,
+    color,
+  });
+
+  const clearFilters = () => {
+    setSize([]);
+    setSelectedCategories([]);
+    setColor([]);
+    setPriceSearch("");
+  };
+
+  const showClearButton =
+    size.length > 0 ||
+    selectedCategories.length > 0 ||
+    color.length > 0 ||
+    priceSearch.length > 0;
+
   return (
-    <div className="max-w-[1500px] mx-auto py-5 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-10">
+    <div className="mx-auto max-w-[1500px] px-4 py-5 sm:px-6 lg:px-8">
+      <h1 className="mb-4 mt-10 text-3xl font-bold md:text-4xl">
         {name} collection
       </h1>
       <p className="my-2 text-lg md:text-xl">
@@ -17,16 +87,32 @@ const ProductsCategory = ({ name }) => {
       </p>
       <hr className="my-8 border-gray-300" />
 
-      <div className="flex flex-col md:flex-row justify-center gap-5">
-        <div className="flex flex-col w-full md:w-[250px] mt-4 gap-4">
+      <div className="flex flex-col justify-center gap-5 md:flex-row">
+        <div className="mt-4 flex w-full flex-col gap-4 md:w-[250px]">
           <div>
-            <label htmlFor="price" className="text-[17px] font-semibold mr-2">
-              Price
-            </label>
+            <div
+              className="flex flex-col
+            "
+            >
+              <button
+                disabled={!showClearButton}
+                onClick={clearFilters}
+                className="mb-2 mt-4 rounded-md bg-red-500 px-4 py-2 text-white hover:bg-red-600 disabled:pointer-events-none disabled:bg-red-300"
+              >
+                Clear Filters
+              </button>
+
+              <label htmlFor="price" className="mr-2 text-[17px] font-semibold">
+                Price
+              </label>
+            </div>
+
             <input
               type="number"
               id="price"
-              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#3abff8]"
+              value={priceSearch}
+              onChange={(e) => setPriceSearch(e.target.value)}
+              className="rounded-md border border-gray-300 px-3 py-2 focus:border-[#3abff8] focus:outline-none"
             />
           </div>
           <div className="flex flex-col">
@@ -34,112 +120,79 @@ const ProductsCategory = ({ name }) => {
               Category
             </label>
             <div>
-              <input
-                type="checkbox"
-                id="women"
-                value="women"
-                className="mr-2"
-              />
-              <label htmlFor="women" className="mr-4">
-                Women
-              </label>
-              <br />
-              <input type="checkbox" id="man" value="man" className="mr-2" />
-              <label htmlFor="man" className="mr-4">
-                Man
-              </label>
-              <br />
-              <input type="checkbox" id="kids" value="kids" className="mr-2" />
-              <label htmlFor="kids" className="mr-4">
-                Kids
-              </label>
-              <br />
-              <input
-                type="checkbox"
-                id="sports"
-                value="sports"
-                className="mr-2"
-              />
-              <label htmlFor="sports" className="mr-4">
-                Sports
-              </label>
-              <br />
-              <input
-                type="checkbox"
-                id="beauty"
-                value="beauty"
-                className="mr-2"
-              />
-              <label htmlFor="beauty">Beauty</label>
+              {categoryOptions.map((cat) => (
+                <div key={cat.id}>
+                  <input
+                    type="checkbox"
+                    id={cat.id}
+                    name="category"
+                    value={cat.id}
+                    className="mr-2"
+                    checked={selectedCategories.includes(cat.id)}
+                    onChange={() => handleCategoryChange(cat.id)}
+                  />
+                  <label htmlFor={cat.id} className="mr-4">
+                    {cat.label}
+                  </label>
+                  <br />
+                </div>
+              ))}
             </div>
           </div>
+
           <div className="flex flex-col">
             <label htmlFor="size" className="text-[17px] font-semibold">
               Size
             </label>
             <div>
-              <input type="checkbox" id="s" value="s" className="mr-2" />
-              <label htmlFor="s" className="mr-4">
-                S
-              </label>
-              <br />
-              <input type="checkbox" id="m" value="m" className="mr-2" />
-              <label htmlFor="m" className="mr-4">
-                M
-              </label>
-              <br />
-              <input type="checkbox" id="l" value="l" className="mr-2" />
-              <label htmlFor="l" className="mr-4">
-                L
-              </label>
-              <br />
-              <input type="checkbox" id="xl" value="xl" className="mr-2" />
-              <label htmlFor="xl">XL</label>
+              {sizeOptions.map((option) => (
+                <div key={option.id}>
+                  <input
+                    type="checkbox"
+                    id={option.id}
+                    name="size"
+                    value={option.id}
+                    className="mr-2"
+                    checked={size.includes(option.id)}
+                    onChange={() => handleSizeChange(option.id)}
+                  />
+                  <label htmlFor={option.id} className="mr-4">
+                    {option.label}
+                  </label>
+                  <br />
+                </div>
+              ))}
             </div>
           </div>
+
           <div className="flex flex-col">
             <label htmlFor="color" className="text-[17px] font-semibold">
               Color
             </label>
             <div>
-              <input type="checkbox" id="red" value="red" className="mr-2" />
-              <label htmlFor="red" className="mr-4">
-                Red
-              </label>
-              <br />
-              <input type="checkbox" id="blue" value="blue" className="mr-2" />
-              <label htmlFor="blue" className="mr-4">
-                Blue
-              </label>
-              <br />
-              <input
-                type="checkbox"
-                id="green"
-                value="green"
-                className="mr-2"
-              />
-              <label htmlFor="green" className="mr-4">
-                Green
-              </label>
-              <br />
-              <input type="checkbox" id="pink" value="pink" className="mr-2" />
-              <label htmlFor="pink" className="mr-4">
-                Pink
-              </label>
-              <br />
-              <input
-                type="checkbox"
-                id="brown"
-                value="brown"
-                className="mr-2"
-              />
-              <label htmlFor="brown">Brown</label>
+              {colorOptions.map((option) => (
+                <div key={option.id}>
+                  <input
+                    type="checkbox"
+                    id={option.id}
+                    name="color"
+                    value={option.id}
+                    className="mr-2"
+                    checked={color.includes(option.id)}
+                    onChange={() => handleColorChange(option.id)}
+                  />
+                  <label htmlFor={option.id} className="mr-4">
+                    {option.label}
+                  </label>
+                  <br />
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {loading ? (
-            <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[#3abff8]"></div>
+            <div className="h-10 w-10 animate-spin rounded-full border-b-2 border-t-2 border-[#3abff8]"></div>
           ) : (
             productData.map((data) => (
               <ProductDetail key={data.id} data={data} />

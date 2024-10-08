@@ -1,8 +1,9 @@
-import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import useAxios from "../hooks/useAxios";
 
 const AddProduct = () => {
+  const axiosInstance = useAxios();
   const [productDetails, setProductDetails] = useState({
     name: "",
     title: "",
@@ -24,13 +25,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "https://karbar-api.vercel.app/addProduct",
-        productDetails,
-        {
-          withCredentials: true, 
-        },
-      );
+      await axiosInstance.post("/addProduct", productDetails);
       toast.success("Product added successfully!");
       setProductDetails({
         name: "",

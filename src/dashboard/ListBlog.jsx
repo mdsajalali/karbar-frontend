@@ -1,19 +1,15 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import cross_icon from "../images/cross_icon.png";
+import useAxios from "../hooks/useAxios";
 
 const ListBlog = () => {
   const [blogData, setBlogData] = useState([]);
+  const axiosInstance = useAxios();
 
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get(
-          "https://karbar-api.vercel.app/getBlog",
-          {
-            withCredentials: true,  
-          },
-        );
+        const response = await axiosInstance.get("/getBlog");
         setBlogData(response.data);
       } catch (error) {
         console.error("Error fetching blog data:", error);
@@ -25,7 +21,7 @@ const ListBlog = () => {
 
   const blogDelete = async (blogId) => {
     try {
-      await axios.delete(`https://karbar-api.vercel.app/deleteBlog/${blogId}`);
+      await axiosInstance.delete(`/deleteBlog/${blogId}`);
       setBlogData(blogData.filter((blog) => blog._id !== blogId));
     } catch (error) {
       console.error("Error deleting blog:", error);
