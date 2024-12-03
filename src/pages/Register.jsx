@@ -1,20 +1,53 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import google from "../images/google.png";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const userData = { name, email, password };
+    try {
+      const response = await fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        navigate("/login");
+        console.log("Registration successful:", data);
+      } else {
+        console.error("Registration failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
+  };
+
+  // google login
   const googleLogin = () => {
     window.open("https://karbar-api.vercel.app", "_self");
   };
+
   return (
     <div className="flex">
       <div className="flex-1 bg-slate-100">
-        <div className="mx-auto flex min-h-screen w-[300px] flex-col justify-center sm:w-[450px] md:w-[600px]">
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto flex min-h-screen w-[300px] flex-col justify-center sm:w-[450px] md:w-[600px]"
+        >
           <h1 className="text-3xl font-semibold">Register</h1>
-          <p className="my-3 ">Welcome Back! Please enter your details.</p>
+          <p className="my-3">Welcome Back! Please enter your details.</p>
           <div>
             <div className="mb-4">
               <input
-                type="name"
+                type="text"
                 id="name"
                 name="name"
                 placeholder="Name"
@@ -67,7 +100,7 @@ const Register = () => {
               Login
             </Link>
           </p>
-        </div>
+        </form>
       </div>
     </div>
   );
