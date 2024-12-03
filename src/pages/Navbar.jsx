@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const [user, setUser] = useState(null);
 
-  console.log("User", user)
+  console.log("User", user);
 
   useEffect(() => {
     const getUser = async () => {
@@ -77,12 +77,14 @@ const Navbar = () => {
           </NavLink>
         </nav>
         <div className="flex justify-center gap-4">
-          <div className="hidden h-10 w-10 items-center justify-center rounded-full border border-black p-1 md:flex">
-            <FiShoppingCart size={30} />
-            <span className="-ml-4 -mt-10 flex h-5 w-5 items-center justify-center rounded-full bg-[#3abff8] text-xs text-white">
-              0
-            </span>
-          </div>
+          <Link to="/cart">
+            <div className="hidden h-10 w-10 items-center justify-center rounded-full border border-black p-1 md:flex">
+              <FiShoppingCart size={30} />
+              <span className="-ml-4 -mt-10 flex h-5 w-5 items-center justify-center rounded-full bg-[#3abff8] text-xs text-white">
+                0
+              </span>
+            </div>
+          </Link>
           {user ? (
             <Link
               onClick={logout}

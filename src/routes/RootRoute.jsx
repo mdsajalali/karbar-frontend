@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProductsCategory from "../shared/ProductsCategory";
 import App from "./../App";
+import Cart from "../pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/beauty",
         element: <ProductsCategory name="Beauty" />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/blogs",
