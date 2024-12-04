@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import google from "../images/google.png";
+import { toast } from "sonner";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ const Register = () => {
       if (response.ok) {
         const data = await response.json();
         navigate("/");
+        toast.success("Registration successful");
         console.log("Registration successful:", data);
       } else {
         console.error("Registration failed:", response.statusText);

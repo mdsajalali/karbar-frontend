@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import google from "../images/google.png";
+import { toast } from "sonner";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         navigate("/");
+        toast.success("Login successful");
         console.log("Login successful:", data);
       } else {
         console.error("Login failed:", response.statusText);

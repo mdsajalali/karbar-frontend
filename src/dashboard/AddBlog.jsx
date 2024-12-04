@@ -1,6 +1,6 @@
 import { useState } from "react";
-import toast from "react-hot-toast";
 import useAxios from "../hooks/useAxios";
+import { toast } from "sonner";
 
 const AddBlog = () => {
   const axiosInstance = useAxios();

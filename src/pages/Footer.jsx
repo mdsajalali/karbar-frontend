@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
       <div className="border-t text-center">
         <p className="mt-5 text-[15px] text-white">
-          © All Right Reserved Posh Coder
+          © All Right Reserved Sajal
         </p>
       </div>
     </footer>
