@@ -2,12 +2,39 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import QuickViewPopup from "./QuickViewPopup";
+import { toast } from "sonner";
 
 const ProductDetail = ({ data }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
+  };
+
+  const handleAddToCart = async (productId) => {
+    try {
+      const userId = "12345";
+      const response = await fetch("http://localhost:5000/cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId, productId }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Cart updated:", data);
+        toast.success("Product added to cart!");
+      } else {
+        console.error(data.error);
+        toast.error("Failed to add product to cart.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("An error occurred while adding product to cart.");
+    }
   };
 
   return (
@@ -28,7 +55,10 @@ const ProductDetail = ({ data }) => {
           />
         </Link>
         <div className="absolute bottom-20 left-0 right-0 flex translate-y-1/2 transform flex-wrap items-center justify-center gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 xl:bottom-5">
-          <button className="flex items-center gap-2 rounded-full bg-black  px-4 py-2 text-white  ">
+          <button
+            onClick={() => handleAddToCart(data._id)}
+            className="flex items-center gap-2 rounded-full bg-black  px-4 py-2 text-white  "
+          >
             Add To Cart
           </button>
           <button
@@ -44,7 +74,7 @@ const ProductDetail = ({ data }) => {
       <div className="mb-4 flex items-center justify-evenly">
         <span className="mr-2 text-lg font-bold">${data.price}.00</span>
         <span className="flex items-center justify-center gap-1 text-sm text-gray-600">
-          <FaStar color="fbbf24" /> {data.rating} ({data.reviews} reviews)
+          <FaStar color="#fbbf24" /> {data.rating} ({data.reviews} reviews)
         </span>
       </div>
       {showPopup && <QuickViewPopup data={data} togglePopup={togglePopup} />}
