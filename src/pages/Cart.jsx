@@ -1,25 +1,33 @@
-const Cart = () => {
-  const cartItems = [
-    {
-      id: 1,
-      img: "https://via.placeholder.com/100",
-      product_name: "Sample Product 1",
-      price: 20,
-      quantity: 2,
-    },
-    {
-      id: 2,
-      img: "https://via.placeholder.com/100",
-      product_name: "Sample Product 2",
-      price: 35,
-      quantity: 1,
-    },
-  ];
+import { useState, useEffect } from "react";
 
-  const totalCartPrice = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0,
-  );
+const Cart = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const [totalCartPrice, setTotalCartPrice] = useState(0);
+  const userId = "12345"; // Replace with dynamic user ID
+
+  const fetchCartItems = async () => {
+    try {
+      const response = await fetch(`http://localhost:5000/cart/${userId}`);
+      const data = await response.json();
+
+      if (response.ok) {
+        setCartItems(data);
+        const total = data.reduce((total, item) => {
+          const productPrice = item.product[0]?.price || 0;
+          return total + productPrice * item.quantity;
+        }, 0);
+        setTotalCartPrice(total);
+      } else {
+        console.error("Error fetching cart items:", data.error);
+      }
+    } catch (error) {
+      console.error("Error fetching cart items:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCartItems();
+  }, []);
 
   return (
     <div className="mx-auto max-w-[1500px]">
@@ -38,36 +46,37 @@ const Cart = () => {
               <h5 className="w-32">Subtotal</h5>
               <h5 className="w-20">Action</h5>
             </div>
+
             {/* Cart Items */}
-            {cartItems.map((product) => (
+            {cartItems.map((cartItem) => (
               <div
-                key={product.id}
+                key={cartItem._id}
                 className="flex flex-col items-center gap-3 border-b p-5 last:border-b-0 lg:grid lg:grid-cols-[auto_1fr_auto_auto_auto_auto] lg:gap-10"
               >
                 <img
-                  src={product.img}
-                  alt={product.product_name}
+                  src={cartItem.product[0]?.image}
+                  alt={cartItem.product[0]?.name}
                   className="aspect-[1/1.3] w-[100px] object-cover"
                 />
                 <h4 className="mx-auto max-w-[280px] text-center font-medium">
-                  {product.product_name}
+                  {cartItem.product[0]?.name}
                 </h4>
                 <p className="w-[120px] text-center font-medium">
-                  ${product.price}
+                  ${cartItem.product[0]?.price}
                 </p>
                 <div className="flex w-32 items-center border">
                   <button className="flex h-[54px] w-[38px] items-center justify-center text-gray-500">
                     -
                   </button>
                   <span className="block min-w-12 text-center text-lg font-semibold">
-                    {product.quantity}
+                    {cartItem.quantity}
                   </span>
                   <button className="flex h-[54px] w-[38px] items-center justify-center text-gray-500">
                     +
                   </button>
                 </div>
                 <p className="w-32 text-center font-medium">
-                  ${(product.price * product.quantity).toFixed(2)}
+                  ${(cartItem.product[0]?.price * cartItem.quantity).toFixed(2)}
                 </p>
                 <div className="w-20">
                   <button className="mx-auto flex size-9 items-center justify-center rounded-full border duration-300 hover:bg-[#3abff8] hover:text-white">
@@ -77,6 +86,7 @@ const Cart = () => {
               </div>
             ))}
           </div>
+
           <div className="mt-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
             <div className="block bg-[#f2f2f2] px-5 py-3.5 font-semibold text-[#1f1f1f] duration-300 hover:bg-[#3abff8] hover:text-white">
               Continue Shopping
@@ -86,6 +96,7 @@ const Cart = () => {
               Clear Cart
             </button>
           </div>
+
           {/* Cart Summary */}
           <div className="mt-8 flex flex-col items-start gap-x-8 gap-y-4 md:flex-row">
             <div className="flex w-full">
