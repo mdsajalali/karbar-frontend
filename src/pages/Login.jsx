@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import google from "../images/google.png";
 import { toast } from "sonner";
+import axiosInstance from "../utils/axiosInstance";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,24 +13,18 @@ const Login = () => {
     const userData = { email, password };
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
+      const { status, data } = await axiosInstance.post("/login", userData);
 
-      if (response.ok) {
-        const data = await response.json();
+      console.log("data", data);
+
+      if (status === 200) {
         navigate("/");
-        toast.success("Login successful");
-        console.log("Login successful:", data);
+        toast.success(data?.message);
       } else {
-        console.error("Login failed:", response.statusText);
+        console.error("Login failed:", status);
       }
     } catch (error) {
-      console.error("Error during login:", error);
+      toast.error(error.response?.data?.message);
     }
   };
 
@@ -64,10 +59,6 @@ const Login = () => {
                 placeholder="Password"
                 className="w-full rounded-md border p-3 text-gray-700 focus:border-[#3abff8] focus:outline-none"
               />
-            </div>
-
-            <div className="mt-4 font-semibold underline">
-              <Link to="/forgot-password">Forgot Password?</Link>
             </div>
 
             <input
