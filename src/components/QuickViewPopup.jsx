@@ -7,13 +7,11 @@ const QuickViewPopup = ({ data, togglePopup }) => {
   return (
     <div className="fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-gray-800 bg-opacity-50">
       <div className="w-full max-w-xl rounded-md bg-white p-6">
-        <button
-          onClick={togglePopup}
-          className=" flex   text-gray-600   hover:text-black"
-        >
-          <MdClose size={25} />
-        </button>
-
+        <div className="flex items-center justify-end text-gray-600   hover:text-black">
+          <button onClick={togglePopup}>
+            <MdClose size={25} />
+          </button>
+        </div>
         <div className="mx-auto my-10 w-[200px] border">
           <Link to="/men">
             <img src={data.image} alt="" />

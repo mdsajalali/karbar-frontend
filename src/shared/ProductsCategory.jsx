@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProductDetail from "../components/ProductDetail";
 import useProductData from "./GetProduct";
+import Loading from "./Loading";
 
 const ProductsCategory = () => {
   const [priceSearch, setPriceSearch] = useState([]);
@@ -195,7 +196,7 @@ const ProductsCategory = () => {
           <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {loading ? (
               <div className="col-span-1 flex h-60 items-center justify-center md:col-span-2 lg:col-span-3">
-                <div className="h-10 w-10 animate-spin rounded-full border-b-2 border-t-2 border-[#3abff8]" />
+                <Loading />
               </div>
             ) : productData.length === 0 ? (
               <div className="col-span-1 text-center md:col-span-2 lg:col-span-3 lg:mt-10">

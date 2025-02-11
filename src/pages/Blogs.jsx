@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
+import Loading from "../shared/Loading";
 
 const Blogs = () => {
   const [blogData, setBlogData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -11,6 +13,8 @@ const Blogs = () => {
         setBlogData(response.data);
       } catch (error) {
         console.error("Error fetching blog data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -23,28 +27,33 @@ const Blogs = () => {
         Writing
       </h1>
       <hr className="my-8 border-gray-300" />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {blogData?.map((blog) => (
-          <div
-            className="flex flex-col justify-between rounded-md bg-gray-100"
-            key={blog.id}
-          >
-            <img
-              className="w-full rounded-t-md object-cover"
-              src={blog.image}
-              alt={blog.title}
-            />
-            <div className="flex h-full flex-col justify-between p-6">
-              <h2 className="mb-2 text-xl">{blog.title}</h2>
-              {blog.desc && (
-                <p className="mt-auto line-clamp-3 text-sm text-gray-700">
-                  {blog.desc}
-                </p>
-              )}
+
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {blogData?.map((blog) => (
+            <div
+              className="flex flex-col justify-between rounded-md bg-gray-100"
+              key={blog.id}
+            >
+              <img
+                className="w-full rounded-t-md object-cover"
+                src={blog.image}
+                alt={blog.title}
+              />
+              <div className="flex h-full flex-col justify-between p-6">
+                <h2 className="mb-2 text-xl">{blog.title}</h2>
+                {blog.desc && (
+                  <p className="mt-auto line-clamp-3 text-sm text-gray-700">
+                    {blog.desc}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
