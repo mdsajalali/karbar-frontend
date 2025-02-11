@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import useAxios from "../hooks/useAxios";
+import axiosInstance from "../utils/axiosInstance";
 
 const Blogs = () => {
   const [blogData, setBlogData] = useState([]);
-  const axiosInstance = useAxios();
 
   useEffect(() => {
     const fetchBlogData = async () => {

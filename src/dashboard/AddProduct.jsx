@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import useAxios from "../hooks/useAxios";
+import axiosInstance from "../utils/axiosInstance";
 
 const AddProduct = () => {
-  const axiosInstance = useAxios();
   const [productDetails, setProductDetails] = useState({
     name: "",
     title: "",

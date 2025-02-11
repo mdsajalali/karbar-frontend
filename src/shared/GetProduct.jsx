@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import useAxios from "../hooks/useAxios";
+import { useEffect, useState } from "react"; 
+import axiosInstance from "../utils/axiosInstance";
 
-const useProductData = ({ priceSearch, category, size, color }) => {
-  const axiosInstance = useAxios();
+const useProductData = ({ priceSearch, category, size, color }) => { 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -1,9 +1,8 @@
 import { useState } from "react";
-import useAxios from "../hooks/useAxios";
 import { toast } from "sonner";
+import axiosInstance from "../utils/axiosInstance";
 
 const AddBlog = () => {
-  const axiosInstance = useAxios();
   const initialFormData = {
     image: "",
     title: "",

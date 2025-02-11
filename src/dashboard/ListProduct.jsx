@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import cross_icon from "../images/cross_icon.png";
-import useAxios from "../hooks/useAxios";
+import axiosInstance from "../utils/axiosInstance";
 
 const ListProduct = () => {
   const [productData, setProductData] = useState([]);
-  const axiosInstance = useAxios();
 
   useEffect(() => {
     const fetchProductData = async () => {
