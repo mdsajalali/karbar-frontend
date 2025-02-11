@@ -2,6 +2,7 @@ import facebook from "../images/social-icons/facebook.svg";
 import telegram from "../images/social-icons/telegram.svg";
 import twitter from "../images/social-icons/twitter.svg";
 import youtube from "../images/social-icons/youtube.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,7 +10,9 @@ const Footer = () => {
       <div className="mx-auto max-w-[1500px] px-4 py-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div className="mb-8">
-            <h2 className="mb-4 text-lg font-semibold text-white">Dokan</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">
+              <Link to="/">KarBar</Link>
+            </h2>
             <ul>
               <li className="flex cursor-pointer items-center gap-2 text-gray-300">
                 <img className="w-5" src={facebook} alt="" />
@@ -67,7 +70,14 @@ const Footer = () => {
       </div>
       <div className="border-t text-center">
         <p className="mt-5 text-[15px] text-white">
-          © All Right Reserved Sajal
+          © All Right Reserved{" "}
+          <Link
+            to="https://sajalali.vercel.app/"
+            target="_blank"
+            className="cursor-pointer underline"
+          >
+            Md. Sajal Ali
+          </Link>
         </p>
       </div>
     </footer>

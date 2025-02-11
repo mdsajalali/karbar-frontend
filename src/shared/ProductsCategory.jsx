@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProductDetail from "../components/ProductDetail";
 import useProductData from "./GetProduct";
 
-const ProductsCategory = ({ name }) => {
+const ProductsCategory = () => {
   const [priceSearch, setPriceSearch] = useState([]);
   const numericPriceSearch = Number(priceSearch);
   const [size, setSize] = useState([]);
@@ -76,7 +76,7 @@ const ProductsCategory = ({ name }) => {
   return (
     <div className="mx-auto max-w-[1500px] px-4 py-5 sm:px-6 lg:px-8">
       <h1 className="mb-4 mt-10 text-3xl font-bold md:text-4xl">
-        {name} collection
+        Products collection
       </h1>
       <p className="my-2 text-lg md:text-xl">
         We not only help you design exceptional products, but also make it easy

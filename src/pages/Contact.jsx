@@ -78,7 +78,7 @@ const Contact = () => {
               href="mailto:info@example.com"
               className="text-[#3abff8] hover:underline"
             >
-              poshcoder@gmail.com
+              mdsajalali2020@gmail.com
             </a>
           </div>
           <div className="mb-4 flex items-center">

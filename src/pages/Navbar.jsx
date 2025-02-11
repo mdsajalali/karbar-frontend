@@ -54,20 +54,8 @@ const Navbar = () => {
           <Link to="/">KarBar</Link>
         </h1>
         <nav className="hidden items-center gap-5  lg:flex  lg:gap-10">
-          <NavLink className="text-lg font-medium   " to="/men">
-            Men
-          </NavLink>
-          <NavLink className="text-lg font-medium  " to="/women">
-            Women
-          </NavLink>
-          <NavLink className="text-lg font-medium  " to="/kids">
-            Kids
-          </NavLink>
-          <NavLink className="text-lg font-medium  " to="/beauty">
-            Beauty
-          </NavLink>
-          <NavLink className="text-lg font-medium" to="/sports">
-            Sports
+          <NavLink className="text-lg font-medium   " to="/products">
+            Products
           </NavLink>
           <NavLink className="text-lg font-medium" to="/blogs">
             Blogs
@@ -115,39 +103,11 @@ const Navbar = () => {
           <Link
             onClick={toggleNavbar}
             className="block rounded-md px-3 py-2 text-lg font-medium  hover:bg-gray-100"
-            to="/men"
+            to="/products"
           >
-            Men
-          </Link>
-          <Link
-            onClick={toggleNavbar}
-            className="block rounded-md px-3 py-2 text-lg font-medium  hover:bg-gray-100"
-            to="/women"
-          >
-            Women
+            Products
           </Link>
 
-          <Link
-            onClick={toggleNavbar}
-            className="block rounded-md px-3 py-2 text-lg font-medium  hover:bg-gray-100"
-            to="/kids"
-          >
-            Kids
-          </Link>
-          <Link
-            onClick={toggleNavbar}
-            className="block rounded-md px-3 py-2 text-lg font-medium  hover:bg-gray-100"
-            to="/beauty"
-          >
-            Beauty
-          </Link>
-          <Link
-            onClick={toggleNavbar}
-            className="block rounded-md px-3 py-2 text-lg font-medium  hover:bg-gray-100"
-            to="/sports"
-          >
-            Sports
-          </Link>
           <Link
             onClick={toggleNavbar}
             className="block rounded-md px-3 py-2 text-lg font-medium  hover:bg-gray-100"

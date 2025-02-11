@@ -49,7 +49,7 @@ const ProductDetail = ({ data }) => {
             {data?.tag}
           </h1>
         )}
-        <Link to="/men">
+        <Link to="/products">
           <img
             src={data?.image || "default_image_url"} // Fallback for missing image
             alt={data?.name || "Product Image"} // Fallback for missing alt text
