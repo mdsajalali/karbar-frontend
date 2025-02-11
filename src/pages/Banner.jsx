@@ -1,5 +1,6 @@
 import { IoSearch } from "react-icons/io5";
 import banner from "../images/banner.png";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -12,10 +13,12 @@ const Banner = () => {
           <h1 className="mb-6 mt-6 text-4xl font-bold md:text-5xl">
             Exclusive collection for everyone
           </h1>
-          <button className="mr-2 flex items-center gap-2 rounded-full  bg-black px-8 py-4 text-white md:mr-4">
-            Explore Now
-            <IoSearch className="text-2xl" />
-          </button>
+          <Link to="/products">
+            <button className="mr-2 flex items-center gap-2 rounded-full  bg-black px-8 py-4 text-white md:mr-4">
+              Explore Now
+              <IoSearch className="text-2xl" />
+            </button>
+          </Link>
         </div>
         <div className="banner-right md:w-1/2">
           <img src={banner} alt="Banner" className="w-full" />

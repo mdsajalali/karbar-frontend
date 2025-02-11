@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import google from "../images/google.png";
 import { toast } from "sonner";
+import axiosInstance from "../utils/axiosInstance";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -11,24 +12,16 @@ const Register = () => {
     const password = e.target.password.value;
     const userData = { name, email, password };
     try {
-      const response = await fetch("http://localhost:5000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
+      const { status, data } = await axiosInstance.post("/register", userData);
 
-      if (response.ok) {
-        const data = await response.json();
+      if (status === 201) {
         navigate("/");
-        toast.success("Registration successful");
-        console.log("Registration successful:", data);
+        toast.success(data?.message);
       } else {
-        console.error("Registration failed:", response.statusText);
+        console.error("Registration failed:", status);
       }
     } catch (error) {
-      console.error("Error during registration:", error);
+      toast.error(error.response?.data?.message);
     }
   };
 

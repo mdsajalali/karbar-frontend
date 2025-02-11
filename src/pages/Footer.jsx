@@ -37,10 +37,8 @@ const Footer = () => {
               Quick Link
             </h2>
             <ul>
-              <li className="cursor-pointer text-gray-300">Woman</li>
-              <li className="my-2 cursor-pointer text-gray-300">Men</li>
-              <li className="mb-2 cursor-pointer text-gray-300">Kids</li>
-              <li className="cursor-pointer text-gray-300">Beauty</li>
+              <li className="cursor-pointer text-gray-300">Products</li>
+              <li className="my-2 cursor-pointer text-gray-300">Blogs</li>
             </ul>
           </div>
           <div className="mb-8">
