@@ -4,7 +4,7 @@ const NewArrivalsProduct = ({ data }) => {
   return (
     <div className="mx-auto my-5 max-w-xs overflow-hidden rounded">
       <img
-        className="mb-4 w-full  rounded-md bg-slate-200 object-cover"
+        className="mb-4 w-full h-[300px] md:h-[350px]  rounded-md bg-slate-200 object-cover"
         src={data.img}
         alt={data.title}
       />

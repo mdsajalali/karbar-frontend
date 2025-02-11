@@ -12,16 +12,16 @@ const PopularProduct = ({ data }) => {
     <div className="my-5 overflow-hidden rounded shadow-lg">
       <div>
         <img
-          className="mb-4 w-full rounded-md bg-slate-200 object-cover"
+          className="mb-4 h-[300px] w-full rounded-md bg-slate-200 object-cover md:h-[350px]"
           src={selectedImage}
           alt={data?.title}
         />
       </div>
-      <div className="mt-2 flex flex-wrap justify-center gap-3">
+      <div className="mt-2 flex justify-center  gap-2 px-2   md:gap-3">
         {data?.images?.map((img, index) => (
           <img
             key={index}
-            className="h-24 w-[140px] cursor-pointer rounded-md object-cover"
+            className="h-24 cursor-pointer rounded-md object-cover sm:w-[140px]"
             src={img}
             alt={`Product Image ${index + 1}`}
             onClick={() => handleImageClick(img)}
