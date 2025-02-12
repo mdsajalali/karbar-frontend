@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import axiosInstance from "../utils/axiosInstance";
+import axios from "axios";
 
 const AddProduct = () => {
+  const image_api_key = import.meta.env.VITE_IMAGE_API_KEY;
   const [productDetails, setProductDetails] = useState({
     name: "",
     title: "",
@@ -19,6 +21,26 @@ const AddProduct = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProductDetails({ ...productDetails, [name]: value });
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const response = await axios.post(
+        `https://api.imgbb.com/1/upload?key=${image_api_key}`,
+        formData,
+      );
+      const imageUrl = response.data.data.url;
+      setProductDetails({ ...productDetails, image: imageUrl });
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      toast.error("Failed to upload image");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -45,7 +67,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="mx-auto mt-4 max-w-4xl rounded-lg bg-white p-4 md:p-8  ">
+    <div className="mx-auto mt-4 max-w-4xl rounded-lg bg-white p-4 md:p-8">
       <h1 className="mb-6 text-center text-2xl font-bold md:text-4xl xl:text-3xl">
         Add Product
       </h1>
@@ -77,15 +99,7 @@ const AddProduct = () => {
           </div>
           <div className="mb-4">
             <p>Image</p>
-            <input
-              value={productDetails.image}
-              onChange={handleChange}
-              type="text"
-              name="image"
-              required
-              placeholder="Image URL"
-              className="mt-2 h-12 w-full rounded border border-gray-300 px-4"
-            />
+            <input type="file" onChange={handleImageUpload} />
           </div>
           <div className="mb-4">
             <p>Price</p>
@@ -187,7 +201,6 @@ const AddProduct = () => {
             />
           </div>
         </div>
-
         <button
           type="submit"
           className="h-12 w-full rounded-lg bg-[#3abff8] font-semibold text-white hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
