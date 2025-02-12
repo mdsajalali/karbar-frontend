@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 const Dashboard = () => {
   return (
-    <div className="">
+    <div>
       <Header />
       <div className="col-span-12 flex flex-col lg:flex-row">
         <Sidebar />

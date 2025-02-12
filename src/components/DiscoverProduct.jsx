@@ -1,5 +1,4 @@
 const DiscoverProduct = ({ data }) => {
-  console.log(data);
   return (
     <div
       style={{ background: data.bg }}

@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const logout = () => {
-    window.open("https://karbar-api.vercel.app/auth/logout", "_self");
+    window.open("http://localhost:5000/auth/logout", "_self");
   };
 
   const toggleNavbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
     const getUser = async () => {
       try {
         const response = await fetch(
-          "https://karbar-api.vercel.app/auth/login/success",
+          "http://localhost:5000/auth/login/success",
           {
             method: "GET",
             credentials: "include",
@@ -59,6 +59,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink className="text-lg font-medium" to="/blogs">
             Blogs
+          </NavLink>
+          <NavLink className="text-lg font-medium" to="/dashboard">
+            Dashboard
           </NavLink>
           <NavLink className="text-lg font-medium   " to="/contact">
             Contact
@@ -114,6 +117,13 @@ const Navbar = () => {
             to="/blogs"
           >
             Blogs
+          </Link>
+          <Link
+            onClick={toggleNavbar}
+            className="block rounded-md px-3 py-2 text-lg font-medium  hover:bg-gray-100"
+            to="/dashboard"
+          >
+            Dashboard
           </Link>
           <Link
             onClick={toggleNavbar}

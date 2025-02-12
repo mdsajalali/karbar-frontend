@@ -62,7 +62,7 @@ const ProductDetail = ({ data }) => {
             className="flex items-center gap-2 rounded-full bg-black px-4 py-2 text-white"
             disabled={isAdding}
           >
-            {isAdding ? "Adding..." : "Add To Cart"}
+            Add To Cart
           </button>
           <button
             onClick={togglePopup}

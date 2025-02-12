@@ -15,7 +15,7 @@ const Register = () => {
       const { status, data } = await axiosInstance.post("/register", userData);
 
       if (status === 201) {
-        navigate("/");
+        navigate("/login");
         toast.success(data?.message);
       } else {
         console.error("Registration failed:", status);
@@ -27,7 +27,7 @@ const Register = () => {
 
   // google login
   const googleLogin = () => {
-    window.open("https://karbar-api.vercel.app", "_self");
+    window.open("http://localhost:5000/auth/google", "_self");
   };
 
   return (
