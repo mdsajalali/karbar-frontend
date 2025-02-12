@@ -2,7 +2,7 @@ import offer_img from "../images/offer-img.png";
 
 const Offer = () => {
   return (
-    <div className="mx-auto my-20 flex max-w-6xl flex-col-reverse items-center justify-between rounded-md bg-yellow-100 px-4 py-8 sm:px-6 md:flex-row lg:px-8">
+    <div className="mx-auto my-20 flex max-w-6xl flex-col-reverse items-center justify-between rounded-lg bg-yellow-100 px-4 pt-8 sm:px-6 md:flex-row lg:px-8">
       <div className="offer-left md:w-1/2 md:pr-8">
         <img
           src={offer_img}

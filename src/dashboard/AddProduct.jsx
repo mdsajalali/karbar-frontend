@@ -32,7 +32,7 @@ const AddProduct = () => {
 
     try {
       const response = await axios.post(
-        `https://api.imgbb.com/1/upload?key=${image_api_key}`,
+        `https://api.imgbb.com/1/upload?expiration=600&key=${image_api_key}`,
         formData,
       );
       const imageUrl = response.data.data.url;
